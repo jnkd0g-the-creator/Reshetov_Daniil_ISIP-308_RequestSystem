@@ -76,6 +76,29 @@ ruff check src tests
 ## Ход выполнения
 
 План и соответствие методичке: [`docs/assignment_checklist.md`](docs/assignment_checklist.md).
-API и деплой описываются на соответствующих этапах ЛР7–8.
+Деплой описывается на этапе ЛР8.
+
+## REST API
+
+Тот же сервер, базовый адрес `http://localhost:8000`.
+Swagger: `/docs`, машиночитаемая схема: `/openapi.json`.
+Основные методы: `GET/POST /requests`, `GET/PATCH/DELETE /requests/{id}`,
+`GET /users`, `/statuses`, `/categories`, `/cafes`.
+`PATCH /requests/{id}/assignment` назначает, `/status` меняет статус.
+Удаление — подтверждённый архив закрытой, `DELETE ...?confirm=true` (admin).
+
+API требует входа: `POST /auth/login` устанавливает cookie; ответ содержит
+`csrf_token`, необходимый в `X-CSRF-Token` для изменений. Не публикуйте
+ответ входа. Пример открытого запроса и запрос без авторизации:
+
+```bash
+curl http://localhost:8000/health
+curl -i http://localhost:8000/requests  # ожидается 401
+python scripts/check_api.py          # 29 реальных curl, локальные demo credentials
+```
+
+Полный контракт, таблица endpoints, коллекция curl и реальные обезличенные
+ответы: [`docs/api/`](docs/api/). `GET /requests` возвращает JSON-массив;
+поиск `q=КРАН`, фильтры `status_code=new&category_id=1`, limit/offset.
 
 Репозиторий: https://github.com/jnkd0g-the-creator/Reshetov_Daniil_ISIP-308_RequestSystem
