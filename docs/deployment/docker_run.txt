@@ -1,0 +1,129 @@
+$ docker version --format Client={{.Client.Version}} Server={{.Server.Version}}
+Client=29.9.3 Server=29.9.3
+
+
+$ docker compose -p coffeedesk-labs --progress plain build
+#1 [internal] load local bake definitions
+#1 reading from stdin 586B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 859B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.10-slim-bookworm
+#3 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 340B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 951B done
+#5 DONE 0.0s
+
+#6 [1/7] FROM docker.io/library/python:3.10-slim-bookworm@sha256:5be5aaecb962a41567bc8041f1e9e3432cb085b037fe057f9a562630b2e4b370
+#6 resolve docker.io/library/python:3.10-slim-bookworm@sha256:5be5aaecb962a41567bc8041f1e9e3432cb085b037fe057f9a562630b2e4b370 0.0s done
+#6 DONE 0.0s
+
+#7 [2/7] WORKDIR /app
+#7 CACHED
+
+#8 [4/7] RUN pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [6/7] COPY src ./src
+#9 CACHED
+
+#10 [3/7] COPY requirements.txt ./
+#10 CACHED
+
+#11 [5/7] RUN groupadd --gid 10001 coffee && useradd --uid 10001 --gid coffee --no-create-home coffee     && install -d -o coffee -g coffee /app/data
+#11 CACHED
+
+#12 [7/7] COPY docs/database/schema.sql docs/database/seed.sql ./docs/database/
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:471d0e8ae5c2c7307ec97a953a4a7357b4ff14291a52c7fc7c54a84fc4e2a62f 0.0s done
+#13 exporting config sha256:d32441689d84fa822fe3d1085b62daf540182d9741ac0306ada9a60f4482c068 0.0s done
+#13 exporting attestation manifest sha256:459ed310c15d046ad4de0e031b143391bd8691bec6a85258cd619f64c2b59cd3 0.0s done
+#13 exporting manifest list sha256:0b12e9f680e047bd89e8303ac4668805f1023f20ab1095b3f2459e5001976b72 0.0s done
+#13 naming to docker.io/library/coffeedesk:local
+#13 naming to docker.io/library/coffeedesk:local done
+#13 unpacking to docker.io/library/coffeedesk:local done
+#13 DONE 0.1s
+
+#14 resolving provenance for metadata file
+#14 DONE 0.0s
+ Image coffeedesk:local Building 
+ Image coffeedesk:local Built 
+
+
+$ docker compose -p coffeedesk-labs run --rm coffee python -m coffeedesk init-db --demo --credentials /app/data/demo_credentials.txt
+Demo initialized: /app/data/coffeedesk.db. Credentials stored locally: /app/data/demo_credentials.txt (never commit).
+ Volume coffeedesk-labs_coffee_data Creating 
+ Network coffeedesk-labs_default Creating 
+ Volume coffeedesk-labs_coffee_data Created 
+ Network coffeedesk-labs_default Created 
+ Container coffeedesk-labs-coffee-run-07df16bb2304 Creating 
+ Container coffeedesk-labs-coffee-run-07df16bb2304 Created 
+
+
+$ docker compose -p coffeedesk-labs up -d --wait --wait-timeout 90
+ Container coffeedesk-labs-coffee-1 Creating 
+ Container coffeedesk-labs-coffee-1 Created 
+ Container coffeedesk-labs-coffee-1 Starting 
+ Container coffeedesk-labs-coffee-1 Started 
+ Container coffeedesk-labs-coffee-1 Waiting 
+ Container coffeedesk-labs-coffee-1 Healthy 
+
+
+$ docker compose -p coffeedesk-labs ps -q coffee
+fd10086e223ec19fe72f80becf8ae3ec8f1ce8f5e31bd6994879b7bb4eff71d2
+
+
+$ docker inspect --format ID={{.Id}} User={{.Config.User}} Health={{.State.Health.Status}} fd10086e223ec19fe72f80becf8ae3ec8f1ce8f5e31bd6994879b7bb4eff71d2
+ID=fd10086e223ec19fe72f80becf8ae3ec8f1ce8f5e31bd6994879b7bb4eff71d2 User=10001:10001 Health=healthy
+
+
+$ docker compose -p coffeedesk-labs exec -T coffee id
+uid=10001(coffee) gid=10001(coffee) groups=10001(coffee)
+
+
+$ docker compose -p coffeedesk-labs exec -T coffee python --version
+Python 3.10.22
+
+
+GET /health → 200 {"status": "ok", "database": "ok", "version": "1.0.0"}
+
+POST /auth/login → 200 (credentials/session/CSRF omitted)
+
+POST /requests → 201; id=13
+
+$ docker compose -p coffeedesk-labs up -d --force-recreate --wait --wait-timeout 90
+ Container coffeedesk-labs-coffee-1 Recreate 
+ Container coffeedesk-labs-coffee-1 Recreated 
+ Container coffeedesk-labs-coffee-1 Starting 
+ Container coffeedesk-labs-coffee-1 Started 
+ Container coffeedesk-labs-coffee-1 Waiting 
+ Container coffeedesk-labs-coffee-1 Healthy 
+
+
+$ docker compose -p coffeedesk-labs ps -q coffee
+87f47bd6fc2df0b4774e5fe5aa478b4cda5f426c271652fc6b7eec714317db67
+
+
+New container ID differs: PASS. GET /requests/13 → 200, title persisted: PASS. Session also persisted in SQLite.
+
+$ docker compose -p coffeedesk-labs ps
+NAME                       IMAGE              COMMAND                  SERVICE   CREATED         STATUS                   PORTS
+coffeedesk-labs-coffee-1   coffeedesk:local   "python -m coffeedes…"   coffee    6 seconds ago   Up 5 seconds (healthy)   8000/tcp, 127.0.0.1:8001->8001/tcp
+
+
+$ docker image inspect coffeedesk:local --format Image={{.Id}} Size={{.Size}} User={{.Config.User}}
+Image=sha256:0b12e9f680e047bd89e8303ac4668805f1023f20ab1095b3f2459e5001976b72 Size=223389129 User=10001:10001
+
+
+REMOTE DEPLOYMENT: BLOCKED — no agreed SSH server or external URL provided. This run proves only local container deployment on the current machine (127.0.0.1:8001). No public port was opened.
