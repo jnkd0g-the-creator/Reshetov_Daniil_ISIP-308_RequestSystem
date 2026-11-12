@@ -1,0 +1,107 @@
+{
+  "renderer": "LibreOffice Writer 7.4, DejaVu fonts, offline container",
+  "lab1_page_requirement": "PASS",
+  "reports": [
+    {
+      "report": "Lab_01_CoffeeDesk.docx",
+      "pages": 6,
+      "page_text_lengths": [
+        383,
+        1553,
+        1334,
+        1443,
+        590,
+        1627
+      ]
+    },
+    {
+      "report": "Lab_02_CoffeeDesk.docx",
+      "pages": 3,
+      "page_text_lengths": [
+        379,
+        1208,
+        1452
+      ]
+    },
+    {
+      "report": "Lab_03_CoffeeDesk.docx",
+      "pages": 4,
+      "page_text_lengths": [
+        371,
+        738,
+        791,
+        1013
+      ]
+    },
+    {
+      "report": "Lab_04_CoffeeDesk.docx",
+      "pages": 5,
+      "page_text_lengths": [
+        388,
+        487,
+        57,
+        141,
+        1397
+      ]
+    },
+    {
+      "report": "Lab_05_CoffeeDesk.docx",
+      "pages": 3,
+      "page_text_lengths": [
+        382,
+        678,
+        1553
+      ]
+    },
+    {
+      "report": "Lab_06_CoffeeDesk.docx",
+      "pages": 5,
+      "page_text_lengths": [
+        375,
+        893,
+        290,
+        201,
+        1767
+      ]
+    },
+    {
+      "report": "Lab_07_CoffeeDesk.docx",
+      "pages": 4,
+      "page_text_lengths": [
+        364,
+        1314,
+        533,
+        858
+      ]
+    },
+    {
+      "report": "Lab_08_CoffeeDesk.docx",
+      "pages": 3,
+      "page_text_lengths": [
+        369,
+        1210,
+        1568
+      ]
+    },
+    {
+      "report": "Lab_09_CoffeeDesk.docx",
+      "pages": 4,
+      "page_text_lengths": [
+        395,
+        1111,
+        1452,
+        602
+      ]
+    },
+    {
+      "report": "Lab_10_CoffeeDesk.docx",
+      "pages": 4,
+      "page_text_lengths": [
+        390,
+        1414,
+        1542,
+        1387
+      ]
+    }
+  ]
+}

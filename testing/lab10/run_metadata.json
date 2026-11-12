@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-12",
+  "commit": "f62853cc612e895da8305fdcc194d47a7aeb2140",
+  "source_sha256": "113d89fb823e2c529882bf66604119dadb8d54701d6a1e4e9ec1dc663e4b8751",
+  "source_uncommitted": false,
+  "exit_code": 0,
+  "tests": 57,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "coverage_percent": 90.37854889589906
+}

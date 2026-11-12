@@ -1,0 +1,95 @@
+$ /home/jnk/work_projects/Reshetov_Daniil_ISIP-308_RequestSystem/.venv/bin/python -m pytest tests testing/lab10 --cov=coffeedesk --cov-report=term-missing --cov-report=json:testing/lab10/coverage.json --cov-report=xml:testing/lab10/coverage.xml --junitxml=testing/lab10/junit.xml -v
+============================= test session starts ==============================
+platform linux -- Python 3.10.11, pytest-8.4.1, pluggy-1.7.0 -- /home/jnk/work_projects/Reshetov_Daniil_ISIP-308_RequestSystem/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/jnk/work_projects/Reshetov_Daniil_ISIP-308_RequestSystem
+configfile: pyproject.toml
+plugins: anyio-4.16.0, cov-6.2.1
+collecting ... collected 57 items
+
+tests/test_smoke.py::test_service_lifecycle_and_persistence PASSED       [  1%]
+tests/test_smoke.py::test_web_login_and_creation PASSED                  [  3%]
+tests/test_validation_regression.py::test_bug01_boolean_is_not_an_integer_identifier PASSED [  5%]
+testing/lab10/test_api.py::test_api_create_success_and_location PASSED   [  7%]
+testing/lab10/test_api.py::test_api_bad_input_422 PASSED                 [  8%]
+testing/lab10/test_api.py::test_api_missing_and_invalid_id PASSED        [ 10%]
+testing/lab10/test_api.py::test_regression_bug01_strict_integer_ids[True-cafe_id] PASSED [ 12%]
+testing/lab10/test_api.py::test_regression_bug01_strict_integer_ids[True-category_id] PASSED [ 14%]
+testing/lab10/test_api.py::test_regression_bug01_strict_integer_ids[False-cafe_id] PASSED [ 15%]
+testing/lab10/test_api.py::test_regression_bug01_strict_integer_ids[False-category_id] PASSED [ 17%]
+testing/lab10/test_api.py::test_regression_bug01_strict_integer_ids[1-cafe_id] PASSED [ 19%]
+testing/lab10/test_api.py::test_regression_bug01_strict_integer_ids[1-category_id] PASSED [ 21%]
+testing/lab10/test_api.py::test_regression_bug01_strict_integer_ids[0-cafe_id] PASSED [ 22%]
+testing/lab10/test_api.py::test_regression_bug01_strict_integer_ids[0-category_id] PASSED [ 24%]
+testing/lab10/test_api.py::test_regression_bug01_strict_integer_ids[-1-cafe_id] PASSED [ 26%]
+testing/lab10/test_api.py::test_regression_bug01_strict_integer_ids[-1-category_id] PASSED [ 28%]
+testing/lab10/test_api.py::test_patch_empty_null_extra_are_rejected[body0] PASSED [ 29%]
+testing/lab10/test_api.py::test_patch_empty_null_extra_are_rejected[body1] PASSED [ 31%]
+testing/lab10/test_api.py::test_patch_empty_null_extra_are_rejected[body2] PASSED [ 33%]
+testing/lab10/test_api.py::test_regression_role_scope_and_direct_http PASSED [ 35%]
+testing/lab10/test_api.py::test_csrf_enforced_even_with_cookie PASSED    [ 36%]
+testing/lab10/test_api.py::test_unauthenticated_requests_401 PASSED      [ 38%]
+testing/lab10/test_api.py::test_patch_data_persist PASSED                [ 40%]
+testing/lab10/test_api.py::test_delete_is_archive_not_physical_delete PASSED [ 42%]
+testing/lab10/test_api.py::test_users_response_excludes_secrets PASSED   [ 43%]
+testing/lab10/test_api.py::test_api_catalogs_and_history PASSED          [ 45%]
+testing/lab10/test_api.py::test_openapi_and_static_frontend PASSED       [ 47%]
+testing/lab10/test_api.py::test_health_checks_actual_database PASSED     [ 49%]
+testing/lab10/test_auth_config.py::test_password_hash_and_wrong_password PASSED [ 50%]
+testing/lab10/test_auth_config.py::test_session_expiration PASSED        [ 52%]
+testing/lab10/test_auth_config.py::test_logout_invalidates_session PASSED [ 54%]
+testing/lab10/test_auth_config.py::test_wrong_password_error_is_generic_and_no_echo PASSED [ 56%]
+testing/lab10/test_auth_config.py::test_explicit_password_too_long_not_reflected PASSED [ 57%]
+testing/lab10/test_auth_config.py::test_cookie_attributes PASSED         [ 59%]
+testing/lab10/test_auth_config.py::test_production_disallows_insecure_cookie PASSED [ 61%]
+testing/lab10/test_auth_config.py::test_invalid_port[0] PASSED           [ 63%]
+testing/lab10/test_auth_config.py::test_invalid_port[65536] PASSED       [ 64%]
+testing/lab10/test_business.py::test_create_defaults_and_author PASSED   [ 66%]
+testing/lab10/test_business.py::test_persistent_update_new_connection PASSED [ 68%]
+testing/lab10/test_business.py::test_full_status_workflow PASSED         [ 70%]
+testing/lab10/test_business.py::test_start_requires_assignee PASSED      [ 71%]
+testing/lab10/test_business.py::test_status_skip_is_rejected PASSED      [ 73%]
+testing/lab10/test_business.py::test_idempotent_status_does_not_duplicate_audit PASSED [ 75%]
+testing/lab10/test_business.py::test_assignment_requires_real_technician[1] PASSED [ 77%]
+testing/lab10/test_business.py::test_assignment_requires_real_technician[5] PASSED [ 78%]
+testing/lab10/test_business.py::test_assignment_requires_real_technician[999999] PASSED [ 80%]
+testing/lab10/test_business.py::test_cannot_remove_assignee_in_progress PASSED [ 82%]
+testing/lab10/test_business.py::test_technician_cannot_close PASSED      [ 84%]
+testing/lab10/test_business.py::test_applicant_own_new_only PASSED       [ 85%]
+testing/lab10/test_business.py::test_closed_request_is_immutable PASSED  [ 87%]
+testing/lab10/test_business.py::test_archive_confirmation_role_and_state PASSED [ 89%]
+testing/lab10/test_business.py::test_archive_is_non_destructive_and_idempotent PASSED [ 91%]
+testing/lab10/test_business.py::test_audit_failure_rolls_back_request PASSED [ 92%]
+testing/lab10/test_business.py::test_unicode_search_and_combined_filters PASSED [ 94%]
+testing/lab10/test_business.py::test_search_wildcards_and_sql_injection_are_literal PASSED [ 96%]
+testing/lab10/test_business.py::test_comment_trim_and_empty_rejection PASSED [ 98%]
+testing/lab10/test_business.py::test_foreign_key_and_catalog_validation PASSED [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.10/site-packages/starlette/testclient.py:37
+  /home/jnk/work_projects/Reshetov_Daniil_ISIP-308_RequestSystem/.venv/lib/python3.10/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/jnk/work_projects/Reshetov_Daniil_ISIP-308_RequestSystem/testing/lab10/junit.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.10.11-final-0 _______________
+
+Name                           Stmts   Miss  Cover   Missing
+------------------------------------------------------------
+src/coffeedesk/__init__.py         1      0   100%
+src/coffeedesk/__main__.py        41     41     0%   1-51
+src/coffeedesk/api.py             71      4    94%   44, 88, 93, 109
+src/coffeedesk/app.py             58      2    97%   52, 67
+src/coffeedesk/config.py          25      3    88%   20, 23, 29
+src/coffeedesk/database.py        40      1    98%   40
+src/coffeedesk/errors.py          10      0   100%
+src/coffeedesk/models.py          97      0   100%
+src/coffeedesk/repository.py      81      0   100%
+src/coffeedesk/security.py        19      1    95%   18
+src/coffeedesk/services.py       191      9    95%   37, 48, 51, 89, 94, 113, 184, 186, 213
+------------------------------------------------------------
+TOTAL                            634     61    90%
+Coverage XML written to file testing/lab10/coverage.xml
+Coverage JSON written to file testing/lab10/coverage.json
+======================== 57 passed, 1 warning in 23.98s ========================

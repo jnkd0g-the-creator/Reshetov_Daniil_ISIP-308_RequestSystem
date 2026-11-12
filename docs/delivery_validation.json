@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "checks": [
+    "Lab_01_CoffeeDesk.docx: valid DOCX, 47 paragraphs, 2 project images",
+    "Lab_02_CoffeeDesk.docx: valid DOCX, 26 paragraphs, 1 project images",
+    "Lab_03_CoffeeDesk.docx: valid DOCX, 26 paragraphs, 2 project images",
+    "Lab_04_CoffeeDesk.docx: valid DOCX, 30 paragraphs, 5 project images",
+    "Lab_05_CoffeeDesk.docx: valid DOCX, 25 paragraphs, 2 project images",
+    "Lab_06_CoffeeDesk.docx: valid DOCX, 30 paragraphs, 3 project images",
+    "Lab_07_CoffeeDesk.docx: valid DOCX, 26 paragraphs, 2 project images",
+    "Lab_08_CoffeeDesk.docx: valid DOCX, 26 paragraphs, 2 project images",
+    "Lab_09_CoffeeDesk.docx: valid DOCX, 28 paragraphs, 2 project images",
+    "Lab_10_CoffeeDesk.docx: valid DOCX, 31 paragraphs, 2 project images",
+    "30 executed cases PASS; 30 student manual reviews honestly BLOCKED",
+    "Public SQLite: 12 requests, !unset passwords, zero sessions",
+    "246 versioned/candidate files scanned: no actual local demo passwords, private dirs or .env",
+    "This targeted scan is not a general-purpose security audit."
+  ],
+  "known_external_blocks": [
+    "remote deployment",
+    "student manual review",
+    "student voiced final video"
+  ]
+}
