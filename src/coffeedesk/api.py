@@ -2,21 +2,27 @@
 
 from typing import Annotated, Literal
 
-from fastapi import APIRouter, Depends, Path, Query, Request, Response
+from fastapi import APIRouter, Depends, Header, Path, Query, Request, Response, Security
+from fastapi.security import APIKeyCookie
 
 from .models import (
-    Assignment, CommentCreate, CommentOut, HistoryOut, Login, RequestCreate,
-    RequestOut, RequestUpdate, StatusUpdate, UserOut,
+    Assignment, CafeOut, CategoryOut, CommentCreate, CommentOut, HistoryOut,
+    Login, LoginOut, RequestCreate, RequestOut, RequestUpdate, StatusOut, StatusUpdate, UserOut,
 )
 
 router = APIRouter()
 RequestId = Annotated[int, Path(gt=0, description="Положительный идентификатор заявки")]
+session_cookie = APIKeyCookie(name="coffee_session", auto_error=False, description="Сессия из POST /auth/login; не публикуйте значение cookie.")
 
 
-def current_user(request: Request):
+def current_user(
+    request: Request,
+    token: Annotated[str | None, Security(session_cookie)],
+    csrf: Annotated[str | None, Header(alias="X-CSRF-Token", description="Для изменения данных: csrf_token из ответа входа")] = None,
+):
     return request.app.state.auth.authenticate(
-        request.cookies.get("coffee_session"),
-        request.headers.get("X-CSRF-Token"),
+        token,
+        csrf,
         modifying=request.method not in {"GET", "HEAD", "OPTIONS"},
     )
 
@@ -24,7 +30,7 @@ def current_user(request: Request):
 User = Annotated[dict, Depends(current_user)]
 
 
-@router.post("/auth/login", tags=["Авторизация"], summary="Войти в систему")
+@router.post("/auth/login", response_model=LoginOut, tags=["Авторизация"], summary="Войти в систему")
 def login(data: Login, request: Request, response: Response):
     user, token, csrf = request.app.state.auth.login(data.username, data.password)
     settings = request.app.state.settings
@@ -113,16 +119,16 @@ def users(request: Request, user: User):
     return request.app.state.service.users(user)
 
 
-@router.get("/statuses", tags=["Справочники"], summary="Четыре статуса")
+@router.get("/statuses", response_model=list[StatusOut], tags=["Справочники"], summary="Четыре статуса")
 def statuses(request: Request, user: User):
     return request.app.state.service.catalog("statuses")
 
 
-@router.get("/categories", tags=["Справочники"], summary="Категории неисправностей")
+@router.get("/categories", response_model=list[CategoryOut], tags=["Справочники"], summary="Категории неисправностей")
 def categories(request: Request, user: User):
     return request.app.state.service.catalog("categories")
 
 
-@router.get("/cafes", tags=["Справочники"], summary="Кофе-бары")
+@router.get("/cafes", response_model=list[CafeOut], tags=["Справочники"], summary="Кофе-бары")
 def cafes(request: Request, user: User):
     return request.app.state.service.catalog("cafes")

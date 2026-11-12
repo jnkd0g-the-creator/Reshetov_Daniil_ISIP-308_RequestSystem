@@ -12,6 +12,7 @@ from .api import router
 from .config import Settings
 from .database import Database
 from .errors import DomainError
+from .models import ErrorOut
 from .services import AuthService, RequestService
 
 STATIC = Path(__file__).parent / "static"
@@ -23,12 +24,13 @@ def error(status, code, message, details=None):
 
 def create_app(settings=None):
     settings = settings or Settings.from_env()
-    app = FastAPI(title="CoffeeDesk API", version=__version__, description="Учёт эксплуатационных заявок кофе-баров. Все данные учебные. Требуется cookie-сессия; для изменений передайте X-CSRF-Token из ответа входа.")
+    app = FastAPI(title="CoffeeDesk API", version=__version__, description="Учёт эксплуатационных заявок кофе-баров. Все данные учебные. Требуется cookie-сессия; для изменений передайте X-CSRF-Token из ответа входа.", responses={status: {"model": ErrorOut} for status in (400, 401, 403, 404, 409, 422, 429, 503)})
     app.state.settings = settings
     app.state.database = Database(settings.db_path)
     app.state.service = RequestService(app.state.database)
     app.state.auth = AuthService(app.state.database, settings.session_seconds)
-    # Lab 6 web controllers. Lab 7 exposes the same service adapters publicly.
+    app.include_router(router)
+    # Compatibility with the lab 6 UI; excluded from public OpenAPI.
     app.include_router(router, prefix="/ui-api", include_in_schema=False)
 
     @app.exception_handler(DomainError)
