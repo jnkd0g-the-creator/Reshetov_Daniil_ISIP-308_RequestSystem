@@ -1,0 +1,62 @@
+$ git init -b main
+Initialized empty Git repository in /home/jnk/work_projects/Reshetov_Daniil_ISIP-308_RequestSystem/.local/git-conflict-f2h33x9u/.git/
+
+$ git config user.name Training Demo
+
+$ git config user.email training@example.invalid
+
+$ git add README.md
+
+$ git commit -m initial
+[main (root-commit) ae77a5d] initial
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+$ git switch -c develop
+Switched to a new branch 'develop'
+
+$ git commit -am clarify domain
+[develop d270fb9] clarify domain
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git switch main
+Switched to branch 'main'
+
+$ git commit -am clarify purpose
+[main cbdfba8] clarify purpose
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git merge develop
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ git status --short
+UU README.md
+
+$ git diff
+diff --cc README.md
+index 8647e0c,134d564..0000000
+--- a/README.md
++++ b/README.md
+@@@ -1,1 -1,1 +1,5 @@@
+++<<<<<<< HEAD
+ +CoffeeDesk: register and track requests.
+++=======
++ CoffeeDesk: coffee-bar maintenance requests.
+++>>>>>>> develop
+
+$ git add README.md
+
+$ git commit -m resolve: preserve purpose and domain
+[main 741b906] resolve: preserve purpose and domain
+
+$ git status --short
+
+$ git log --graph --oneline --all
+*   741b906 resolve: preserve purpose and domain
+|\  
+| * d270fb9 clarify domain
+* | cbdfba8 clarify purpose
+|/  
+* ae77a5d initial
