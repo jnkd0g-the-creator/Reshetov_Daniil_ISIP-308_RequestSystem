@@ -7,7 +7,7 @@ Description = Annotated[str, StringConstraints(strip_whitespace=True, min_length
 CommentBody = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=2000)]
 Priority = Literal["low", "normal", "high", "urgent"]
 Status = Literal["new", "in_progress", "done", "closed"]
-PositiveId = Annotated[int, Field(gt=0)]
+PositiveId = Annotated[int, Field(gt=0, strict=True)]
 
 
 class Input(BaseModel):

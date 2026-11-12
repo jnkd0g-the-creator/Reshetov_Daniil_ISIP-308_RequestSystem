@@ -1,0 +1,25 @@
+{
+  "version": "9763dbec5d34f6a365198d1e99c06c8f6cd6af1b",
+  "request": {
+    "title": "Проверка типа ID",
+    "description": "JSON boolean не является целочисленным идентификатором бара.",
+    "cafe_id": true,
+    "category_id": 1
+  },
+  "expected_http": 422,
+  "actual_http": 422,
+  "response": {
+    "error": {
+      "code": "validation_error",
+      "message": "Проверьте обязательные поля, длину и допустимые значения.",
+      "details": [
+        {
+          "field": "body.cafe_id",
+          "type": "int_type"
+        }
+      ]
+    }
+  },
+  "database_count": 12,
+  "result": "PASS"
+}

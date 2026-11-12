@@ -1,5 +1,6 @@
 """Record the original boolean-ID defect before changing application code."""
 
+import hashlib
 import json
 import secrets
 import subprocess
@@ -34,7 +35,7 @@ def main():
         version = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
         with database.transaction() as con:
             count = con.execute("SELECT COUNT(*) FROM Requests").fetchone()[0]
-        record = {"version": version, "request": body, "expected_http": 422, "actual_http": response.status_code, "response": response.json(), "database_count": count, "result": "PASS" if response.status_code == 422 else "FAIL"}
+        record = {"version": version, "models_sha256": hashlib.sha256((ROOT / "src/coffeedesk/models.py").read_bytes()).hexdigest(), "source_uncommitted": subprocess.run(["git", "diff", "--quiet", "HEAD", "--", "src"], cwd=ROOT).returncode != 0, "request": body, "expected_http": 422, "actual_http": response.status_code, "response": response.json(), "database_count": count, "result": "PASS" if response.status_code == 422 else "FAIL"}
         # Never overwrite the before-fix evidence during a later retest.
         suffix = "retest" if response.status_code == 422 else "before_fix"
         path = output / f"BUG-01_{suffix}.json"
