@@ -1,0 +1,41 @@
+@startuml
+left to right direction
+actor Администратор as A
+actor Оператор as O
+actor Исполнитель as T
+actor Заявитель as U
+rectangle CoffeeDesk {
+ usecase "UC-01 Вход / выход" as UC1
+ usecase "UC-02 Создать заявку" as UC2
+ usecase "UC-03 Поиск и просмотр" as UC3
+ usecase "UC-04 Назначить мастера" as UC4
+ usecase "UC-05 Выполнить ремонт" as UC5
+ usecase "UC-06 Принять и закрыть" as UC6
+ usecase "UC-07 Изменить заявку" as UC7
+ usecase "UC-08 Архивировать" as UC8
+}
+A --> UC1
+A --> UC2
+A --> UC3
+A --> UC4
+A --> UC5
+A --> UC6
+A --> UC7
+A --> UC8
+O --> UC1
+O --> UC2
+O --> UC3
+O --> UC4
+O --> UC5
+O --> UC6
+O --> UC7
+T --> UC1
+T --> UC3
+T --> UC5
+U --> UC1
+U --> UC2
+U --> UC3
+U --> UC7
+note bottom of UC3 : Заявитель: свои; исполнитель: назначенные
+note bottom of UC8 : Только закрытые + явное подтверждение
+@enduml

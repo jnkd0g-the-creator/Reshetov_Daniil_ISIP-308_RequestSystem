@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1240" viewBox="0 0 1600 1240">
+<rect width="100%" height="100%" fill="#f7f5f0"/>
+<text x="50" y="67" font-family="DejaVu Sans,sans-serif" font-size="32" fill="#183e35">CoffeeDesk · UML Use Case · четыре роли</text>
+<rect x="430" y="100" width="730" height="1050" rx="16" fill="#edf2eb" stroke="#557d6e" stroke-width="2"/>
+<text x="452" y="142" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Система учёта заявок кофе-баров</text>
+<polyline points="260,230 490,205" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,230 490,323" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,230 490,441" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,230 490,559" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,230 490,677" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,230 490,795" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,230 490,913" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,230 490,1031" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,750 490,205" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,750 490,323" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,750 490,441" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,750 490,559" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,750 490,677" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,750 490,795" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="260,750 490,913" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="1330,230 1100,205" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="1330,230 1100,441" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="1330,230 1100,677" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="1330,750 1100,205" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="1330,750 1100,323" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="1330,750 1100,441" fill="none" stroke="#91a79f" stroke-width="2"/>
+<polyline points="1330,750 1100,913" fill="none" stroke="#91a79f" stroke-width="2"/>
+<ellipse cx="795.0" cy="205.0" rx="305.0" ry="45.0" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="512" y="202" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">UC-01 · Вход и выход</text>
+<ellipse cx="795.0" cy="323.0" rx="305.0" ry="45.0" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="512" y="320" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">UC-02 · Создать заявку</text>
+<ellipse cx="795.0" cy="441.0" rx="305.0" ry="45.0" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="512" y="438" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">UC-03 · Поиск и просмотр</text>
+<ellipse cx="795.0" cy="559.0" rx="305.0" ry="45.0" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="512" y="556" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">UC-04 · Назначить мастера</text>
+<ellipse cx="795.0" cy="677.0" rx="305.0" ry="45.0" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="512" y="674" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">UC-05 · Выполнить ремонт</text>
+<ellipse cx="795.0" cy="795.0" rx="305.0" ry="45.0" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="512" y="792" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">UC-06 · Принять и закрыть</text>
+<ellipse cx="795.0" cy="913.0" rx="305.0" ry="45.0" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="512" y="910" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">UC-07 · Изменить заявку</text>
+<ellipse cx="795.0" cy="1031.0" rx="305.0" ry="45.0" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="512" y="1028" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">UC-08 · Архивировать</text>
+<circle cx="220" cy="187" r="17" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="220,204 220,264" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="186,227 254,227" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="191,295 220,264 249,295" fill="none" stroke="#294f40" stroke-width="3"/>
+<text x="120" y="328" font-family="DejaVu Sans,sans-serif" font-size="21" fill="#213c35">Администратор</text>
+<circle cx="220" cy="707" r="17" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="220,724 220,784" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="186,747 254,747" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="191,815 220,784 249,815" fill="none" stroke="#294f40" stroke-width="3"/>
+<text x="120" y="848" font-family="DejaVu Sans,sans-serif" font-size="21" fill="#213c35">Оператор</text>
+<circle cx="1370" cy="187" r="17" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="1370,204 1370,264" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="1336,227 1404,227" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="1341,295 1370,264 1399,295" fill="none" stroke="#294f40" stroke-width="3"/>
+<text x="1270" y="328" font-family="DejaVu Sans,sans-serif" font-size="21" fill="#213c35">Исполнитель</text>
+<circle cx="1370" cy="707" r="17" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="1370,724 1370,784" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="1336,747 1404,747" fill="none" stroke="#294f40" stroke-width="3"/>
+<polyline points="1341,815 1370,784 1399,815" fill="none" stroke="#294f40" stroke-width="3"/>
+<text x="1270" y="848" font-family="DejaVu Sans,sans-serif" font-size="21" fill="#213c35">Заявитель</text>
+<text x="55" y="1196" font-family="DejaVu Sans,sans-serif" font-size="21" fill="#213c35">Условия доступа: заявитель — только свои; мастер — назначенные; архив — только закрытые, admin.</text>
+</svg>
