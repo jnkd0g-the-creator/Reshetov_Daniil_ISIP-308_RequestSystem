@@ -13,7 +13,7 @@
     "Lab_10_CoffeeDesk.docx: valid DOCX, 31 paragraphs, 2 project images",
     "30 executed cases PASS; 30 student manual reviews honestly BLOCKED",
     "Public SQLite: 12 requests, !unset passwords, zero sessions",
-    "246 versioned/candidate files scanned: no actual local demo passwords, private dirs or .env",
+    "250 versioned/candidate files scanned: no actual local demo passwords, private dirs or .env",
     "This targeted scan is not a general-purpose security audit."
   ],
   "known_external_blocks": [
