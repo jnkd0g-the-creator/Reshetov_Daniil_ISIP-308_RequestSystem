@@ -1,17 +1,6 @@
 ﻿id;group;goal;preconditions;steps;input;expected;actual;status;evidence;execution_mode;manual_status
 TC-01;positive/integration;Создание формы;"Отдельная seed-БД, действующая учётная запись указанной роли; исходно 12 заявок.";Войти admin → Новая → ввести поля → Создать → проверить SQLite;"Тема=Протекает контрольный кран; описание ≥10; бар=1; категория=1";Карточка с номером, строка SQLite, new;"Создана форма, id=13; строка реально в SQLite.";PASS;"evidence/TC-01.json; evidence/TC-01.png";browser + SQLite;BLOCKED
-TC-02;positive;Список и карточка;"Отдельная seed-БД, действующая учётная запись указанной роли; исходно 12 заявок.";Открыть список → выбрать созданную;Заявка TC-01;Открыта правильная карточка;"Error: LocatorAssertions.to_be_visible: Error: strict mode violation: locator("".badge.new"") resolved to 6 elements:
-    1) <span class=""badge new"">Новая</span> aka get_by_role(""row"", name=""CB-00013"").locator(""span"").nth(1)
-    2) <span class=""badge new"">Новая</span> aka get_by_role(""row"", name=""CB-00009"").locator(""span"").nth(1)
-    3) <span class=""badge new"">Новая</span> aka get_by_role(""row"", name=""CB-00007"").locator(""span"").nth(1)
-    4) <span class=""badge new"">Новая</span> aka get_by_role(""row"", name=""CB-00005"").locator(""span"").nth(1)
-    5) <span class=""badge new"">Новая</span> aka get_by_role(""row"", name=""CB-00002"").locator(""span"").nth(1)
-    6) <span class=""badge new"">Новая</span> aka get_by_role(""row"", name=""CB-00001"").locator(""span"").nth(1)
-
-Call log:
-  - Expect ""to_be_visible"" with timeout 5000ms
-  - waiting for locator("".badge.new"")
-";FAIL;"evidence/TC-02.json; evidence/TC-02.png";browser + SQLite;BLOCKED
+TC-02;positive;Список и карточка;"Отдельная seed-БД, действующая учётная запись указанной роли; исходно 12 заявок.";Открыть список → выбрать созданную;Заявка TC-01;Открыта правильная карточка;Список → карточка, отображены реквизиты и Новая.;PASS;"evidence/TC-02.json; evidence/TC-02.png";browser + SQLite;BLOCKED
 TC-03;positive;Поиск и пересечение фильтров;"Отдельная seed-БД, действующая учётная запись указанной роли; исходно 12 заявок.";Ввести КОНТРОЛЬНЫЙ, выбрать new/сантехника → Найти;"q=КОНТРОЛЬНЫЙ; status=new; category=1";Одна соответствующая строка, регистр не важен;Кириллица верхнего регистра + статус + категория: одна нужная строка.;PASS;"evidence/TC-03.json; evidence/TC-03.png";browser + SQLite;BLOCKED
 TC-04;positive/integration;Редактирование;"Отдельная seed-БД, действующая учётная запись указанной роли; исходно 12 заявок.";Открыть редактирование → изменить описание → сохранить;Уточнённое описание ≥10 символов;Новое описание сохранено;Изменение видно в карточке и SQLite.;PASS;"evidence/TC-04.json; evidence/TC-04.png";browser + SQLite;BLOCKED
 TC-05;positive;Назначение и смена статуса;"Отдельная seed-БД, действующая учётная запись указанной роли; исходно 12 заявок.";Назначить tech1 → Взять в работу;assignee=3, next=in_progress;Мастер и В работе сохранены;Мастер 1 назначен, статус В работе.;PASS;"evidence/TC-05.json; evidence/TC-05.png";browser + SQLite;BLOCKED

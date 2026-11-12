@@ -1,7 +1,7 @@
 {
   "total": 30,
-  "PASS": 29,
-  "FAIL": 1,
+  "PASS": 30,
+  "FAIL": 0,
   "BLOCKED": 0,
   "manual_review": "BLOCKED (not performed by student)",
   "remote": "BLOCKED"

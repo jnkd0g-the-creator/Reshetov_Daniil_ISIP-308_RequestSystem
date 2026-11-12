@@ -1,8 +1,8 @@
 {
   "id": "TC-02",
   "expected": "Открыта правильная карточка",
-  "actual": "Error: LocatorAssertions.to_be_visible: Error: strict mode violation: locator(\".badge.new\") resolved to 6 elements:\n    1) <span class=\"badge new\">Новая</span> aka get_by_role(\"row\", name=\"CB-00013\").locator(\"span\").nth(1)\n    2) <span class=\"badge new\">Новая</span> aka get_by_role(\"row\", name=\"CB-00009\").locator(\"span\").nth(1)\n    3) <span class=\"badge new\">Новая</span> aka get_by_role(\"row\", name=\"CB-00007\").locator(\"span\").nth(1)\n    4) <span class=\"badge new\">Новая</span> aka get_by_role(\"row\", name=\"CB-00005\").locator(\"span\").nth(1)\n    5) <span class=\"badge new\">Новая</span> aka get_by_role(\"row\", name=\"CB-00002\").locator(\"span\").nth(1)\n    6) <span class=\"badge new\">Новая</span> aka get_by_role(\"row\", name=\"CB-00001\").locator(\"span\").nth(1)\n\nCall log:\n  - Expect \"to_be_visible\" with timeout 5000ms\n  - waiting for locator(\".badge.new\")\n",
-  "status": "FAIL",
+  "actual": "Список → карточка, отображены реквизиты и Новая.",
+  "status": "PASS",
   "execution_mode": "browser + SQLite",
   "related_http": []
 }

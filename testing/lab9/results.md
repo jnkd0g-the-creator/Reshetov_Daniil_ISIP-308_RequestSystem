@@ -5,18 +5,7 @@
 | ID | Цель | Статус | Факт |
 |---|---|---|---|
 | TC-01 | Создание формы | PASS | Создана форма, id=13; строка реально в SQLite. |
-| TC-02 | Список и карточка | FAIL | Error: LocatorAssertions.to_be_visible: Error: strict mode violation: locator(".badge.new") resolved to 6 elements:
-    1) <span class="badge new">Новая</span> aka get_by_role("row", name="CB-00013").locator("span").nth(1)
-    2) <span class="badge new">Новая</span> aka get_by_role("row", name="CB-00009").locator("span").nth(1)
-    3) <span class="badge new">Новая</span> aka get_by_role("row", name="CB-00007").locator("span").nth(1)
-    4) <span class="badge new">Новая</span> aka get_by_role("row", name="CB-00005").locator("span").nth(1)
-    5) <span class="badge new">Новая</span> aka get_by_role("row", name="CB-00002").locator("span").nth(1)
-    6) <span class="badge new">Новая</span> aka get_by_role("row", name="CB-00001").locator("span").nth(1)
-
-Call log:
-  - Expect "to_be_visible" with timeout 5000ms
-  - waiting for locator(".badge.new")
- |
+| TC-02 | Список и карточка | PASS | Список → карточка, отображены реквизиты и Новая. |
 | TC-03 | Поиск и пересечение фильтров | PASS | Кириллица верхнего регистра + статус + категория: одна нужная строка. |
 | TC-04 | Редактирование | PASS | Изменение видно в карточке и SQLite. |
 | TC-05 | Назначение и смена статуса | PASS | Мастер 1 назначен, статус В работе. |
@@ -46,4 +35,4 @@ Call log:
 | TC-29 | Комментарий | PASS | Комментарий отображён и однажды записан в SQLite. |
 | TC-30 | Недопустимые значения | PASS | Неизвестные priority и status отклонены 422. |
 
-{"total": 30, "PASS": 29, "FAIL": 1, "BLOCKED": 0, "manual_review": "BLOCKED (not performed by student)", "remote": "BLOCKED"}
+{"total": 30, "PASS": 30, "FAIL": 0, "BLOCKED": 0, "manual_review": "BLOCKED (not performed by student)", "remote": "BLOCKED"}

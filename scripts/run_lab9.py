@@ -1,6 +1,7 @@
 """30 real browser/HTTP/SQLite cases. Does not pretend to be student manual work."""
 
 import csv
+import html
 import json
 import sqlite3
 from pathlib import Path
@@ -76,8 +77,15 @@ def main():
                 actual, status = f"{type(exc).__name__}: {exc}", "FAIL"
             # Password fields are never recorded as text; login requests are never retained.
             image = evidence / f"{identifier}.png"
-            page.screenshot(path=str(image))
             trace = {"id": identifier, "expected": expected, "actual": actual, "status": status, "execution_mode": mode, "related_http": requests[-5:]}
+            if mode.startswith("HTTP"):
+                snapshot = browser.new_page(viewport={"width":1440,"height":1050})
+                text = f"{identifier} · {goal}\nExpected: {expected}\nActual: {actual}\nStatus: {status}\n\n" + json.dumps(requests[-1:] if requests else [],ensure_ascii=False,indent=2)[:3500]
+                snapshot.set_content('<meta charset="utf-8"><style>body{padding:30px;background:#12251f;color:#e8f1e5;font:18px monospace}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><pre>'+html.escape(text)+'\n\nFull evidence: '+identifier+'.json</pre>')
+                snapshot.screenshot(path=str(image))
+                snapshot.close()
+            else:
+                page.screenshot(path=str(image))
             (evidence / f"{identifier}.json").write_text(json.dumps(trace, ensure_ascii=False, indent=2) + "\n")
             results.append({"id": identifier, "group": group, "goal": goal, "preconditions": "Отдельная seed-БД, действующая учётная запись указанной роли; исходно 12 заявок.", "steps": steps, "input": data, "expected": expected, "actual": actual, "status": status, "evidence": f"evidence/{identifier}.json; evidence/{identifier}.png", "execution_mode": mode, "manual_status": "BLOCKED"})
             print(identifier, status, goal)
@@ -94,6 +102,7 @@ def main():
         def view():
             ui_open("requests", "Заявки кофе-баров")
             page.get_by_role("link", name="Протекает контрольный кран", exact=True).click()
+            page.get_by_role("heading", name="Протекает контрольный кран", exact=True).wait_for()
             expect(page.locator(".badge.new")).to_be_visible()
             return "Список → карточка, отображены реквизиты и Новая."
         case(2,"positive","Список и карточка", "Открыть список → выбрать созданную", "Заявка TC-01", "Открыта правильная карточка", view)
@@ -312,7 +321,7 @@ def main():
         browser.close()
     keys=list(results[0])
     with (OUT / "test_cases.csv").open("w",encoding="utf-8-sig",newline="") as file:
-        writer=csv.DictWriter(file,fieldnames=keys,delimiter=";")
+        writer=csv.DictWriter(file,fieldnames=keys,delimiter=";",lineterminator="\n")
         writer.writeheader();writer.writerows(results)
     (OUT / "http_results.json").write_text(json.dumps(requests,ensure_ascii=False,indent=2)+"\n")
     totals={status:sum(row["status"]==status for row in results) for status in ["PASS","FAIL","BLOCKED"]}

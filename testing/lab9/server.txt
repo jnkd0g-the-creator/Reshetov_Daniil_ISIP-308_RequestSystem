@@ -1,157 +1,157 @@
-INFO:     Started server process [11253]
+INFO:     Started server process [12249]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:41045 (Press CTRL+C to quit)
-INFO:     127.0.0.1:50064 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /assets/styles.css HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /assets/app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /categories HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /cafes HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "POST /requests HTTP/1.1" 201 Created
-INFO:     127.0.0.1:50084 - "GET /requests/13 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/13/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/13/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/13/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/13 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/13/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests?q=%D0%9A%D0%9E%D0%9D%D0%A2%D0%A0%D0%9E%D0%9B%D0%AC%D0%9D%D0%AB%D0%99&status_code=new&category_id=1&archived=false&limit=20 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/13 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "PATCH /requests/13 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/13 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/13/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/13/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "PATCH /requests/13/assignment HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/13/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/13 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/13/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "PATCH /requests/13/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/13/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/13 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/13/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "POST /requests HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:50084 - "GET /requests/99999999/comments HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50082 - "GET /requests/99999999/history HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50072 - "GET /requests/99999999 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50086 - "GET /requests/99999999 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50086 - "PATCH /requests/13/status HTTP/1.1" 409 Conflict
-INFO:     127.0.0.1:50072 - "POST /requests HTTP/1.1" 201 Created
-INFO:     127.0.0.1:50072 - "GET /requests/14 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/14/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/14/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "POST /requests HTTP/1.1" 201 Created
-INFO:     127.0.0.1:50082 - "GET /requests/15 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/15/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/15/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "POST /requests HTTP/1.1" 201 Created
-INFO:     127.0.0.1:50072 - "GET /requests/16 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/16/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/16/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /auth/me HTTP/1.1" 401 Unauthorized
-INFO:     127.0.0.1:50084 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /cafes HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /categories HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50092 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50092 - "GET /requests HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /auth/me HTTP/1.1" 401 Unauthorized
-INFO:     127.0.0.1:50084 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /categories HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /cafes HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50102 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50102 - "POST /requests HTTP/1.1" 403 Forbidden
-INFO:     127.0.0.1:50082 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /auth/me HTTP/1.1" 401 Unauthorized
-INFO:     127.0.0.1:50082 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /categories HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /cafes HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "POST /requests HTTP/1.1" 201 Created
-INFO:     127.0.0.1:50072 - "GET /requests/17 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/17/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/17/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/13/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/13/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/13 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "PATCH /requests/13/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/13/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/13/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/13 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "GET /requests HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "POST /requests HTTP/1.1" 201 Created
-INFO:     127.0.0.1:50086 - "PATCH /requests/18 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "GET /requests/18 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "PATCH /requests/18/assignment HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "PATCH /requests/18/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "PATCH /requests/18/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "PATCH /requests/18/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "DELETE /requests/18?confirm=true HTTP/1.1" 204 No Content
-INFO:     127.0.0.1:50086 - "POST /requests HTTP/1.1" 403 Forbidden
-INFO:     127.0.0.1:50084 - "GET /requests?q=NO_MATCH_COFFEEDESK_999&archived=false&limit=20 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "POST /requests HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:52412 - "GET /requests HTTP/1.1" 401 Unauthorized
-INFO:     127.0.0.1:50092 - "GET /requests/2 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:50084 - "POST /requests HTTP/1.1" 201 Created
-INFO:     127.0.0.1:50082 - "GET /requests/19/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/19/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/19 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "POST /requests HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:50084 - "GET /requests/12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/12/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "GET /requests/12/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50082 - "POST /requests/12/comments HTTP/1.1" 201 Created
-INFO:     127.0.0.1:50082 - "GET /requests/12 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50072 - "GET /requests/12/comments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /requests/12/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50086 - "POST /requests HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:50086 - "PATCH /requests/1/status HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:52426 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52436 - "GET /requests HTTP/1.1" 401 Unauthorized
-INFO:     127.0.0.1:52444 - "POST /auth/login HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52448 - "GET /requests HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52452 - "GET /requests/1 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52468 - "GET /users HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52476 - "GET /statuses HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52486 - "GET /categories HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52488 - "GET /cafes HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52504 - "GET /requests?q=%D0%9A%D0%A0%D0%90%D0%9D&category_id=1 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52512 - "POST /requests HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:52526 - "POST /requests HTTP/1.1" 201 Created
-INFO:     127.0.0.1:52538 - "PATCH /requests/20 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52540 - "PATCH /requests/20/assignment HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:52556 - "PATCH /requests/20/assignment HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52566 - "PATCH /requests/20/status HTTP/1.1" 409 Conflict
-INFO:     127.0.0.1:52576 - "PATCH /requests/20/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52578 - "POST /requests/20/comments HTTP/1.1" 201 Created
-INFO:     127.0.0.1:52590 - "GET /requests/20/history HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52596 - "PATCH /requests/20/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52600 - "PATCH /requests/20/status HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52614 - "DELETE /requests/20 HTTP/1.1" 400 Bad Request
-INFO:     127.0.0.1:52622 - "DELETE /requests/20?confirm=true HTTP/1.1" 204 No Content
-INFO:     127.0.0.1:52632 - "GET /requests?archived=true HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52648 - "GET /requests/99999999 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52658 - "GET /requests/-1 HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:52664 - "GET /requests?status_code=unknown HTTP/1.1" 422 Unprocessable Entity
-INFO:     127.0.0.1:52674 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52684 - "POST /auth/logout HTTP/1.1" 204 No Content
+INFO:     Uvicorn running on http://0.0.0.0:56831 (Press CTRL+C to quit)
+INFO:     127.0.0.1:40520 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /assets/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /assets/styles.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /cafes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "POST /requests HTTP/1.1" 201 Created
+INFO:     127.0.0.1:40532 - "GET /requests/13/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/13/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/13/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/13/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests?q=%D0%9A%D0%9E%D0%9D%D0%A2%D0%A0%D0%9E%D0%9B%D0%AC%D0%9D%D0%AB%D0%99&status_code=new&category_id=1&archived=false&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "PATCH /requests/13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/13/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/13/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "PATCH /requests/13/assignment HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/13/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/13/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "PATCH /requests/13/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/13/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/13/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "POST /requests HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:40538 - "GET /requests/99999999 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40546 - "GET /requests/99999999/comments HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40532 - "GET /requests/99999999/history HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40552 - "GET /requests/99999999 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40552 - "PATCH /requests/13/status HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:40532 - "POST /requests HTTP/1.1" 201 Created
+INFO:     127.0.0.1:40538 - "GET /requests/14/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/14 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/14/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "POST /requests HTTP/1.1" 201 Created
+INFO:     127.0.0.1:40532 - "GET /requests/15/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/15/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "POST /requests HTTP/1.1" 201 Created
+INFO:     127.0.0.1:40546 - "GET /requests/16/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/16/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/16 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:40538 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /cafes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40558 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40558 - "GET /requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:40538 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /cafes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36564 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36564 - "POST /requests HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:40532 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /auth/me HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:40532 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /cafes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "POST /requests HTTP/1.1" 201 Created
+INFO:     127.0.0.1:40546 - "GET /requests/17/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/17 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/17/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/13/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/13/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "PATCH /requests/13/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/13/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/13 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/13/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "GET /requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "POST /requests HTTP/1.1" 201 Created
+INFO:     127.0.0.1:40552 - "PATCH /requests/18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "GET /requests/18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "PATCH /requests/18/assignment HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "PATCH /requests/18/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "PATCH /requests/18/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "PATCH /requests/18/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "DELETE /requests/18?confirm=true HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:40552 - "POST /requests HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:40532 - "GET /requests?q=NO_MATCH_COFFEEDESK_999&archived=false&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests?archived=false&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "POST /requests HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:36574 - "GET /requests HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:40558 - "GET /requests/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40532 - "POST /requests HTTP/1.1" 201 Created
+INFO:     127.0.0.1:40538 - "GET /requests/19/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/19/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "POST /requests HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:40532 - "GET /requests/12/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/12/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "GET /requests/12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40546 - "POST /requests/12/comments HTTP/1.1" 201 Created
+INFO:     127.0.0.1:40546 - "GET /requests/12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40532 - "GET /requests/12/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40538 - "GET /requests/12/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40552 - "POST /requests HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:40552 - "PATCH /requests/1/status HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:36582 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36592 - "GET /requests HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:36604 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36606 - "GET /requests HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36616 - "GET /requests/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36622 - "GET /users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36624 - "GET /statuses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36630 - "GET /categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36644 - "GET /cafes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36652 - "GET /requests?q=%D0%9A%D0%A0%D0%90%D0%9D&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36654 - "POST /requests HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:36666 - "POST /requests HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36682 - "PATCH /requests/20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36694 - "PATCH /requests/20/assignment HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:36704 - "PATCH /requests/20/assignment HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36712 - "PATCH /requests/20/status HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:36728 - "PATCH /requests/20/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36738 - "POST /requests/20/comments HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36754 - "GET /requests/20/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36762 - "PATCH /requests/20/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36768 - "PATCH /requests/20/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36780 - "DELETE /requests/20 HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36786 - "DELETE /requests/20?confirm=true HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:36790 - "GET /requests?archived=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36806 - "GET /requests/99999999 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36812 - "GET /requests/-1 HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:36824 - "GET /requests?status_code=unknown HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:36832 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36836 - "POST /auth/logout HTTP/1.1" 204 No Content
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [11253]
+INFO:     Finished server process [12249]

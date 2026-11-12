@@ -1,4 +1,4 @@
-CoffeeDesk · real curl requests · http://127.0.0.1:41045
+CoffeeDesk · real curl requests · http://127.0.0.1:56831
 01. GET /health → 200 (expected 200) PASS
 02. GET /requests → 401 (expected 401) PASS
 03. POST /auth/login → 200 (expected 200) PASS
@@ -44,8 +44,8 @@ GET /requests/1
   "assignee_id": null,
   "priority": "high",
   "archived": false,
-  "created_at": "2026-11-12T14:39:50.978Z",
-  "updated_at": "2026-11-12T14:39:50.978Z",
+  "created_at": "2026-11-12T14:45:42.658Z",
+  "updated_at": "2026-11-12T14:45:42.658Z",
   "cafe_name": "Центр",
   "category_name": "Сантехника",
   "status_name": "Новая",
