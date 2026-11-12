@@ -1,0 +1,1107 @@
+[
+  {
+    "method": "GET",
+    "path": "/health",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": {
+      "status": "ok",
+      "database": "ok",
+      "version": "1.0.0"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/requests",
+    "expected": 401,
+    "actual": 401,
+    "status": "PASS",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "unauthenticated",
+        "message": "Необходимо войти в систему.",
+        "details": []
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/auth/login",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": "[REDACTED]",
+    "response": {
+      "user": {
+        "id": 1,
+        "username": "admin",
+        "name": "Администратор",
+        "role_code": "admin",
+        "active": true
+      },
+      "csrf_token": "[REDACTED]"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/requests",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": [
+      {
+        "id": 19,
+        "number": "CB-00019",
+        "title": "<img src=x onerror=\"window.xss=1\">",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "new",
+        "applicant_id": 1,
+        "assignee_id": null,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:40:02.643Z",
+        "updated_at": "2026-11-12T14:40:02.643Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Новая",
+        "applicant_name": "Администратор",
+        "assignee_name": null
+      },
+      {
+        "id": 17,
+        "number": "CB-00017",
+        "title": "Интеграция формы и аудита",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "new",
+        "applicant_id": 1,
+        "assignee_id": null,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:40:01.110Z",
+        "updated_at": "2026-11-12T14:40:01.110Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Новая",
+        "applicant_name": "Администратор",
+        "assignee_name": null
+      },
+      {
+        "id": 16,
+        "number": "CB-00016",
+        "title": "Граница описания",
+        "description": "ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "new",
+        "applicant_id": 1,
+        "assignee_id": null,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:58.443Z",
+        "updated_at": "2026-11-12T14:39:58.443Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Новая",
+        "applicant_name": "Администратор",
+        "assignee_name": null
+      },
+      {
+        "id": 15,
+        "number": "CB-00015",
+        "title": "КККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККККК",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "new",
+        "applicant_id": 1,
+        "assignee_id": null,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:58.211Z",
+        "updated_at": "2026-11-12T14:39:58.211Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Новая",
+        "applicant_name": "Администратор",
+        "assignee_name": null
+      },
+      {
+        "id": 14,
+        "number": "CB-00014",
+        "title": "Кра",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "new",
+        "applicant_id": 1,
+        "assignee_id": null,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:58.016Z",
+        "updated_at": "2026-11-12T14:39:58.016Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Новая",
+        "applicant_name": "Администратор",
+        "assignee_name": null
+      },
+      {
+        "id": 13,
+        "number": "CB-00013",
+        "title": "Протекает контрольный кран",
+        "description": "Описание уточнено: заменить уплотнение контрольного крана.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "done",
+        "applicant_id": 1,
+        "assignee_id": 3,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:55.762Z",
+        "updated_at": "2026-11-12T14:40:01.290Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Выполнена",
+        "applicant_name": "Администратор",
+        "assignee_name": "Мастер 1"
+      },
+      {
+        "id": 12,
+        "number": "CB-00012",
+        "title": "Заменить уплотнение холодильника",
+        "description": "Уплотнение заменено, температура стабильна, результат принят оператором.",
+        "cafe_id": 1,
+        "category_id": 5,
+        "status_code": "closed",
+        "applicant_id": 6,
+        "assignee_id": 3,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Центр",
+        "category_name": "Хозяйственные работы",
+        "status_name": "Закрыта",
+        "applicant_name": "Бариста 2",
+        "assignee_name": "Мастер 1"
+      },
+      {
+        "id": 11,
+        "number": "CB-00011",
+        "title": "Устранить течь сифона",
+        "description": "Под мойкой обнаружена небольшая течь в соединении сифона, поставлена ёмкость.",
+        "cafe_id": 2,
+        "category_id": 1,
+        "status_code": "in_progress",
+        "applicant_id": 5,
+        "assignee_id": 3,
+        "priority": "high",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Парк",
+        "category_name": "Сантехника",
+        "status_name": "В работе",
+        "applicant_name": "Бариста 1",
+        "assignee_name": "Мастер 1"
+      },
+      {
+        "id": 10,
+        "number": "CB-00010",
+        "title": "Проверить розетку у холодильника",
+        "description": "Розетка у холодильника нагревается. Оборудование отключено до осмотра мастером.",
+        "cafe_id": 3,
+        "category_id": 3,
+        "status_code": "in_progress",
+        "applicant_id": 6,
+        "assignee_id": 4,
+        "priority": "urgent",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Вокзал",
+        "category_name": "Электрика",
+        "status_name": "В работе",
+        "applicant_name": "Бариста 2",
+        "assignee_name": "Мастер 2"
+      },
+      {
+        "id": 9,
+        "number": "CB-00009",
+        "title": "Заказать хозяйственное обслуживание",
+        "description": "Нужна плановая уборка технической зоны после перемещения оборудования.",
+        "cafe_id": 1,
+        "category_id": 5,
+        "status_code": "new",
+        "applicant_id": 5,
+        "assignee_id": null,
+        "priority": "low",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Центр",
+        "category_name": "Хозяйственные работы",
+        "status_name": "Новая",
+        "applicant_name": "Бариста 1",
+        "assignee_name": null
+      },
+      {
+        "id": 8,
+        "number": "CB-00008",
+        "title": "Починить дверцу шкафа",
+        "description": "Петля дверцы шкафа для посуды закреплена, требуется проверить результат.",
+        "cafe_id": 2,
+        "category_id": 4,
+        "status_code": "done",
+        "applicant_id": 6,
+        "assignee_id": 3,
+        "priority": "low",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Парк",
+        "category_name": "Мебель",
+        "status_name": "Выполнена",
+        "applicant_name": "Бариста 2",
+        "assignee_name": "Мастер 1"
+      },
+      {
+        "id": 7,
+        "number": "CB-00007",
+        "title": "Заменить лампу в подсобке",
+        "description": "Лампа освещения подсобного помещения перегорела во время вечерней смены.",
+        "cafe_id": 3,
+        "category_id": 3,
+        "status_code": "new",
+        "applicant_id": 6,
+        "assignee_id": null,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Вокзал",
+        "category_name": "Электрика",
+        "status_name": "Новая",
+        "applicant_name": "Бариста 2",
+        "assignee_name": null
+      },
+      {
+        "id": 6,
+        "number": "CB-00006",
+        "title": "Обслужить кофемолку",
+        "description": "Нестабильный помол, нужно проверить жернова и выполнить настройку.",
+        "cafe_id": 1,
+        "category_id": 2,
+        "status_code": "in_progress",
+        "applicant_id": 5,
+        "assignee_id": 3,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Центр",
+        "category_name": "Кофейное оборудование",
+        "status_name": "В работе",
+        "applicant_name": "Бариста 1",
+        "assignee_name": "Мастер 1"
+      },
+      {
+        "id": 5,
+        "number": "CB-00005",
+        "title": "Прочистить слив у мойки",
+        "description": "Вода медленно уходит из мойки, периодически появляется неприятный запах.",
+        "cafe_id": 2,
+        "category_id": 1,
+        "status_code": "new",
+        "applicant_id": 5,
+        "assignee_id": null,
+        "priority": "high",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Парк",
+        "category_name": "Сантехника",
+        "status_name": "Новая",
+        "applicant_name": "Бариста 1",
+        "assignee_name": null
+      },
+      {
+        "id": 4,
+        "number": "CB-00004",
+        "title": "Закрепить ножку стула",
+        "description": "Стул у окна шатается. Крепёж проверен и подтянут исполнителем.",
+        "cafe_id": 1,
+        "category_id": 4,
+        "status_code": "done",
+        "applicant_id": 6,
+        "assignee_id": 3,
+        "priority": "low",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Центр",
+        "category_name": "Мебель",
+        "status_name": "Выполнена",
+        "applicant_name": "Бариста 2",
+        "assignee_name": "Мастер 1"
+      },
+      {
+        "id": 3,
+        "number": "CB-00003",
+        "title": "Не горит свет над стойкой",
+        "description": "Перестал работать светильник над барной стойкой, необходимо проверить питание.",
+        "cafe_id": 3,
+        "category_id": 3,
+        "status_code": "in_progress",
+        "applicant_id": 5,
+        "assignee_id": 4,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Вокзал",
+        "category_name": "Электрика",
+        "status_name": "В работе",
+        "applicant_name": "Бариста 1",
+        "assignee_name": "Мастер 2"
+      },
+      {
+        "id": 2,
+        "number": "CB-00002",
+        "title": "Кофемашина не набирает давление",
+        "description": "При приготовлении эспрессо давление не поднимается до рабочего уровня.",
+        "cafe_id": 2,
+        "category_id": 2,
+        "status_code": "new",
+        "applicant_id": 6,
+        "assignee_id": null,
+        "priority": "urgent",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Парк",
+        "category_name": "Кофейное оборудование",
+        "status_name": "Новая",
+        "applicant_name": "Бариста 2",
+        "assignee_name": null
+      },
+      {
+        "id": 1,
+        "number": "CB-00001",
+        "title": "Протекает кран у мойки",
+        "description": "Вода подтекает у основания крана рабочей мойки. Требуется заменить уплотнение.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "new",
+        "applicant_id": 5,
+        "assignee_id": null,
+        "priority": "high",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Новая",
+        "applicant_name": "Бариста 1",
+        "assignee_name": null
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/requests/1",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": {
+      "id": 1,
+      "number": "CB-00001",
+      "title": "Протекает кран у мойки",
+      "description": "Вода подтекает у основания крана рабочей мойки. Требуется заменить уплотнение.",
+      "cafe_id": 1,
+      "category_id": 1,
+      "status_code": "new",
+      "applicant_id": 5,
+      "assignee_id": null,
+      "priority": "high",
+      "archived": false,
+      "created_at": "2026-11-12T14:39:50.978Z",
+      "updated_at": "2026-11-12T14:39:50.978Z",
+      "cafe_name": "Центр",
+      "category_name": "Сантехника",
+      "status_name": "Новая",
+      "applicant_name": "Бариста 1",
+      "assignee_name": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/users",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": [
+      {
+        "id": 1,
+        "username": "admin",
+        "name": "Администратор",
+        "role_code": "admin",
+        "active": true
+      },
+      {
+        "id": 2,
+        "username": "operator",
+        "name": "Оператор",
+        "role_code": "operator",
+        "active": true
+      },
+      {
+        "id": 3,
+        "username": "tech1",
+        "name": "Мастер 1",
+        "role_code": "technician",
+        "active": true
+      },
+      {
+        "id": 4,
+        "username": "tech2",
+        "name": "Мастер 2",
+        "role_code": "technician",
+        "active": true
+      },
+      {
+        "id": 5,
+        "username": "barista1",
+        "name": "Бариста 1",
+        "role_code": "applicant",
+        "active": true
+      },
+      {
+        "id": 6,
+        "username": "barista2",
+        "name": "Бариста 2",
+        "role_code": "applicant",
+        "active": true
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/statuses",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": [
+      {
+        "code": "new",
+        "name": "Новая",
+        "sort_order": 1
+      },
+      {
+        "code": "in_progress",
+        "name": "В работе",
+        "sort_order": 2
+      },
+      {
+        "code": "done",
+        "name": "Выполнена",
+        "sort_order": 3
+      },
+      {
+        "code": "closed",
+        "name": "Закрыта",
+        "sort_order": 4
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/categories",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": [
+      {
+        "id": 1,
+        "name": "Сантехника"
+      },
+      {
+        "id": 2,
+        "name": "Кофейное оборудование"
+      },
+      {
+        "id": 3,
+        "name": "Электрика"
+      },
+      {
+        "id": 4,
+        "name": "Мебель"
+      },
+      {
+        "id": 5,
+        "name": "Хозяйственные работы"
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/cafes",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": [
+      {
+        "id": 1,
+        "name": "Центр",
+        "address": "Учебная локация 1"
+      },
+      {
+        "id": 2,
+        "name": "Парк",
+        "address": "Учебная локация 2"
+      },
+      {
+        "id": 3,
+        "name": "Вокзал",
+        "address": "Учебная локация 3"
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/requests?q=%D0%9A%D0%A0%D0%90%D0%9D&category_id=1",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": [
+      {
+        "id": 13,
+        "number": "CB-00013",
+        "title": "Протекает контрольный кран",
+        "description": "Описание уточнено: заменить уплотнение контрольного крана.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "done",
+        "applicant_id": 1,
+        "assignee_id": 3,
+        "priority": "normal",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:55.762Z",
+        "updated_at": "2026-11-12T14:40:01.290Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Выполнена",
+        "applicant_name": "Администратор",
+        "assignee_name": "Мастер 1"
+      },
+      {
+        "id": 1,
+        "number": "CB-00001",
+        "title": "Протекает кран у мойки",
+        "description": "Вода подтекает у основания крана рабочей мойки. Требуется заменить уплотнение.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "new",
+        "applicant_id": 5,
+        "assignee_id": null,
+        "priority": "high",
+        "archived": false,
+        "created_at": "2026-11-12T14:39:50.978Z",
+        "updated_at": "2026-11-12T14:39:50.978Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Новая",
+        "applicant_name": "Бариста 1",
+        "assignee_name": null
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/requests",
+    "expected": 422,
+    "actual": 422,
+    "status": "PASS",
+    "request": {
+      "title": ""
+    },
+    "response": {
+      "error": {
+        "code": "validation_error",
+        "message": "Проверьте обязательные поля, длину и допустимые значения.",
+        "details": [
+          {
+            "field": "body.title",
+            "type": "string_too_short"
+          },
+          {
+            "field": "body.description",
+            "type": "missing"
+          },
+          {
+            "field": "body.cafe_id",
+            "type": "missing"
+          },
+          {
+            "field": "body.category_id",
+            "type": "missing"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/requests",
+    "expected": 201,
+    "actual": 201,
+    "status": "PASS",
+    "request": {
+      "title": "Проверка REST крана",
+      "description": "Заявка создана реальным curl для проверки HTTP API.",
+      "cafe_id": 1,
+      "category_id": 1,
+      "priority": "high"
+    },
+    "response": {
+      "id": 20,
+      "number": "CB-00020",
+      "title": "Проверка REST крана",
+      "description": "Заявка создана реальным curl для проверки HTTP API.",
+      "cafe_id": 1,
+      "category_id": 1,
+      "status_code": "new",
+      "applicant_id": 1,
+      "assignee_id": null,
+      "priority": "high",
+      "archived": false,
+      "created_at": "2026-11-12T14:40:03.715Z",
+      "updated_at": "2026-11-12T14:40:03.715Z",
+      "cafe_name": "Центр",
+      "category_name": "Сантехника",
+      "status_name": "Новая",
+      "applicant_name": "Администратор",
+      "assignee_name": null
+    }
+  },
+  {
+    "method": "PATCH",
+    "path": "/requests/20",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": {
+      "description": "Изменённое через REST описание проблемы с краном."
+    },
+    "response": {
+      "id": 20,
+      "number": "CB-00020",
+      "title": "Проверка REST крана",
+      "description": "Изменённое через REST описание проблемы с краном.",
+      "cafe_id": 1,
+      "category_id": 1,
+      "status_code": "new",
+      "applicant_id": 1,
+      "assignee_id": null,
+      "priority": "high",
+      "archived": false,
+      "created_at": "2026-11-12T14:40:03.715Z",
+      "updated_at": "2026-11-12T14:40:03.730Z",
+      "cafe_name": "Центр",
+      "category_name": "Сантехника",
+      "status_name": "Новая",
+      "applicant_name": "Администратор",
+      "assignee_name": null
+    }
+  },
+  {
+    "method": "PATCH",
+    "path": "/requests/20/assignment",
+    "expected": 422,
+    "actual": 422,
+    "status": "PASS",
+    "request": {
+      "assignee_id": 5
+    },
+    "response": {
+      "error": {
+        "code": "validation_error",
+        "message": "Выберите действующего пользователя роли «Исполнитель».",
+        "details": []
+      }
+    }
+  },
+  {
+    "method": "PATCH",
+    "path": "/requests/20/assignment",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": {
+      "assignee_id": 3
+    },
+    "response": {
+      "id": 20,
+      "number": "CB-00020",
+      "title": "Проверка REST крана",
+      "description": "Изменённое через REST описание проблемы с краном.",
+      "cafe_id": 1,
+      "category_id": 1,
+      "status_code": "new",
+      "applicant_id": 1,
+      "assignee_id": 3,
+      "priority": "high",
+      "archived": false,
+      "created_at": "2026-11-12T14:40:03.715Z",
+      "updated_at": "2026-11-12T14:40:03.755Z",
+      "cafe_name": "Центр",
+      "category_name": "Сантехника",
+      "status_name": "Новая",
+      "applicant_name": "Администратор",
+      "assignee_name": "Мастер 1"
+    }
+  },
+  {
+    "method": "PATCH",
+    "path": "/requests/20/status",
+    "expected": 409,
+    "actual": 409,
+    "status": "PASS",
+    "request": {
+      "status_code": "done"
+    },
+    "response": {
+      "error": {
+        "code": "state_conflict",
+        "message": "Допустим только следующий статус: Новая → В работе → Выполнена → Закрыта.",
+        "details": []
+      }
+    }
+  },
+  {
+    "method": "PATCH",
+    "path": "/requests/20/status",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": {
+      "status_code": "in_progress"
+    },
+    "response": {
+      "id": 20,
+      "number": "CB-00020",
+      "title": "Проверка REST крана",
+      "description": "Изменённое через REST описание проблемы с краном.",
+      "cafe_id": 1,
+      "category_id": 1,
+      "status_code": "in_progress",
+      "applicant_id": 1,
+      "assignee_id": 3,
+      "priority": "high",
+      "archived": false,
+      "created_at": "2026-11-12T14:40:03.715Z",
+      "updated_at": "2026-11-12T14:40:03.777Z",
+      "cafe_name": "Центр",
+      "category_name": "Сантехника",
+      "status_name": "В работе",
+      "applicant_name": "Администратор",
+      "assignee_name": "Мастер 1"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/requests/20/comments",
+    "expected": 201,
+    "actual": 201,
+    "status": "PASS",
+    "request": {
+      "body": "Проверена реальная запись комментария через API."
+    },
+    "response": {
+      "id": 7,
+      "request_id": 20,
+      "author_id": 1,
+      "author_name": "Администратор",
+      "body": "Проверена реальная запись комментария через API.",
+      "created_at": "2026-11-12T14:40:03.790Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/requests/20/history",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": [
+      {
+        "id": 30,
+        "request_id": 20,
+        "actor_id": 1,
+        "actor_name": "Администратор",
+        "event": "created",
+        "old_value": null,
+        "new_value": "new",
+        "created_at": "2026-11-12T14:40:03.715Z"
+      },
+      {
+        "id": 31,
+        "request_id": 20,
+        "actor_id": 1,
+        "actor_name": "Администратор",
+        "event": "updated",
+        "old_value": "{\"description\": \"Заявка создана реальным curl для проверки HTTP API.\"}",
+        "new_value": "{\"description\": \"Изменённое через REST описание проблемы с краном.\"}",
+        "created_at": "2026-11-12T14:40:03.730Z"
+      },
+      {
+        "id": 32,
+        "request_id": 20,
+        "actor_id": 1,
+        "actor_name": "Администратор",
+        "event": "assigned",
+        "old_value": "None",
+        "new_value": "3",
+        "created_at": "2026-11-12T14:40:03.755Z"
+      },
+      {
+        "id": 33,
+        "request_id": 20,
+        "actor_id": 1,
+        "actor_name": "Администратор",
+        "event": "status_changed",
+        "old_value": "new",
+        "new_value": "in_progress",
+        "created_at": "2026-11-12T14:40:03.777Z"
+      }
+    ]
+  },
+  {
+    "method": "PATCH",
+    "path": "/requests/20/status",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": {
+      "status_code": "done"
+    },
+    "response": {
+      "id": 20,
+      "number": "CB-00020",
+      "title": "Проверка REST крана",
+      "description": "Изменённое через REST описание проблемы с краном.",
+      "cafe_id": 1,
+      "category_id": 1,
+      "status_code": "done",
+      "applicant_id": 1,
+      "assignee_id": 3,
+      "priority": "high",
+      "archived": false,
+      "created_at": "2026-11-12T14:40:03.715Z",
+      "updated_at": "2026-11-12T14:40:03.812Z",
+      "cafe_name": "Центр",
+      "category_name": "Сантехника",
+      "status_name": "Выполнена",
+      "applicant_name": "Администратор",
+      "assignee_name": "Мастер 1"
+    }
+  },
+  {
+    "method": "PATCH",
+    "path": "/requests/20/status",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": {
+      "status_code": "closed"
+    },
+    "response": {
+      "id": 20,
+      "number": "CB-00020",
+      "title": "Проверка REST крана",
+      "description": "Изменённое через REST описание проблемы с краном.",
+      "cafe_id": 1,
+      "category_id": 1,
+      "status_code": "closed",
+      "applicant_id": 1,
+      "assignee_id": 3,
+      "priority": "high",
+      "archived": false,
+      "created_at": "2026-11-12T14:40:03.715Z",
+      "updated_at": "2026-11-12T14:40:03.825Z",
+      "cafe_name": "Центр",
+      "category_name": "Сантехника",
+      "status_name": "Закрыта",
+      "applicant_name": "Администратор",
+      "assignee_name": "Мастер 1"
+    }
+  },
+  {
+    "method": "DELETE",
+    "path": "/requests/20",
+    "expected": 400,
+    "actual": 400,
+    "status": "PASS",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "confirmation_required",
+        "message": "Подтвердите архивацию заявки.",
+        "details": []
+      }
+    }
+  },
+  {
+    "method": "DELETE",
+    "path": "/requests/20?confirm=true",
+    "expected": 204,
+    "actual": 204,
+    "status": "PASS",
+    "request": null,
+    "response": null
+  },
+  {
+    "method": "GET",
+    "path": "/requests?archived=true",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": [
+      {
+        "id": 20,
+        "number": "CB-00020",
+        "title": "Проверка REST крана",
+        "description": "Изменённое через REST описание проблемы с краном.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "closed",
+        "applicant_id": 1,
+        "assignee_id": 3,
+        "priority": "high",
+        "archived": true,
+        "created_at": "2026-11-12T14:40:03.715Z",
+        "updated_at": "2026-11-12T14:40:03.852Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Закрыта",
+        "applicant_name": "Администратор",
+        "assignee_name": "Мастер 1"
+      },
+      {
+        "id": 18,
+        "number": "CB-00018",
+        "title": "Проверка API",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "closed",
+        "applicant_id": 1,
+        "assignee_id": 3,
+        "priority": "urgent",
+        "archived": true,
+        "created_at": "2026-11-12T14:40:01.592Z",
+        "updated_at": "2026-11-12T14:40:01.770Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Закрыта",
+        "applicant_name": "Администратор",
+        "assignee_name": "Мастер 1"
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/requests/99999999",
+    "expected": 404,
+    "actual": 404,
+    "status": "PASS",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "not_found",
+        "message": "Заявка не найдена или недоступна.",
+        "details": []
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/requests/-1",
+    "expected": 422,
+    "actual": 422,
+    "status": "PASS",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "validation_error",
+        "message": "Проверьте обязательные поля, длину и допустимые значения.",
+        "details": [
+          {
+            "field": "path.request_id",
+            "type": "greater_than"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/requests?status_code=unknown",
+    "expected": 422,
+    "actual": 422,
+    "status": "PASS",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "validation_error",
+        "message": "Проверьте обязательные поля, длину и допустимые значения.",
+        "details": [
+          {
+            "field": "query.status_code",
+            "type": "literal_error"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/openapi.json",
+    "expected": 200,
+    "actual": 200,
+    "status": "PASS",
+    "request": null,
+    "response": {
+      "info": {
+        "title": "CoffeeDesk API",
+        "description": "Учёт эксплуатационных заявок кофе-баров. Все данные учебные. Требуется cookie-сессия; для изменений передайте X-CSRF-Token из ответа входа.",
+        "version": "1.0.0"
+      },
+      "paths_count": 14
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/auth/logout",
+    "expected": 204,
+    "actual": 204,
+    "status": "PASS",
+    "request": null,
+    "response": null
+  }
+]

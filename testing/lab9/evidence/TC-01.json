@@ -1,0 +1,8 @@
+{
+  "id": "TC-01",
+  "expected": "Карточка с номером, строка SQLite, new",
+  "actual": "Создана форма, id=13; строка реально в SQLite.",
+  "status": "PASS",
+  "execution_mode": "browser + SQLite",
+  "related_http": []
+}

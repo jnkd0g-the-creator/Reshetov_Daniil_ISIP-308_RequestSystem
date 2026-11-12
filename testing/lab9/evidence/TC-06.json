@@ -1,0 +1,8 @@
+{
+  "id": "TC-06",
+  "expected": "Форма не отправлена, БД без изменений",
+  "actual": "Браузер остановил пустое обязательное поле, строка не создана.",
+  "status": "PASS",
+  "execution_mode": "browser + SQLite",
+  "related_http": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "TC-07",
+  "expected": "422 без создания",
+  "actual": "422, число строк не изменилось; BUG-01 не воспроизводится.",
+  "status": "PASS",
+  "execution_mode": "HTTP + SQLite",
+  "related_http": [
+    {
+      "method": "POST",
+      "path": "/requests",
+      "expected": 422,
+      "actual": 422,
+      "body": {
+        "title": "Проверка API",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": true,
+        "category_id": 1
+      },
+      "response": {
+        "error": {
+          "code": "validation_error",
+          "message": "Проверьте обязательные поля, длину и допустимые значения.",
+          "details": [
+            {
+              "field": "body.cafe_id",
+              "type": "int_type"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

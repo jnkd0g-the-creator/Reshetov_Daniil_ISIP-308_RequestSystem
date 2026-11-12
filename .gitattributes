@@ -6,3 +6,4 @@ testing/**/*.txt whitespace=-blank-at-eol
 *.sqlite3 binary
 *.png binary
 *.mp4 binary
+*.csv text eol=lf whitespace=cr-at-eol

@@ -1,0 +1,133 @@
+{
+  "id": "TC-20",
+  "expected": "204, архив и сохранённая история",
+  "actual": "204 без тела; archived=1, бизнес-строка не удалена.",
+  "status": "PASS",
+  "execution_mode": "HTTP + SQLite",
+  "related_http": [
+    {
+      "method": "PATCH",
+      "path": "/requests/18/assignment",
+      "expected": 200,
+      "actual": 200,
+      "body": {
+        "assignee_id": 3
+      },
+      "response": {
+        "id": 18,
+        "number": "CB-00018",
+        "title": "Проверка API",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "new",
+        "applicant_id": 1,
+        "assignee_id": 3,
+        "priority": "urgent",
+        "archived": false,
+        "created_at": "2026-11-12T14:40:01.592Z",
+        "updated_at": "2026-11-12T14:40:01.753Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Новая",
+        "applicant_name": "Администратор",
+        "assignee_name": "Мастер 1"
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/requests/18/status",
+      "expected": 200,
+      "actual": 200,
+      "body": {
+        "status_code": "in_progress"
+      },
+      "response": {
+        "id": 18,
+        "number": "CB-00018",
+        "title": "Проверка API",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "in_progress",
+        "applicant_id": 1,
+        "assignee_id": 3,
+        "priority": "urgent",
+        "archived": false,
+        "created_at": "2026-11-12T14:40:01.592Z",
+        "updated_at": "2026-11-12T14:40:01.758Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "В работе",
+        "applicant_name": "Администратор",
+        "assignee_name": "Мастер 1"
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/requests/18/status",
+      "expected": 200,
+      "actual": 200,
+      "body": {
+        "status_code": "done"
+      },
+      "response": {
+        "id": 18,
+        "number": "CB-00018",
+        "title": "Проверка API",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "done",
+        "applicant_id": 1,
+        "assignee_id": 3,
+        "priority": "urgent",
+        "archived": false,
+        "created_at": "2026-11-12T14:40:01.592Z",
+        "updated_at": "2026-11-12T14:40:01.762Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Выполнена",
+        "applicant_name": "Администратор",
+        "assignee_name": "Мастер 1"
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/requests/18/status",
+      "expected": 200,
+      "actual": 200,
+      "body": {
+        "status_code": "closed"
+      },
+      "response": {
+        "id": 18,
+        "number": "CB-00018",
+        "title": "Проверка API",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": 1,
+        "category_id": 1,
+        "status_code": "closed",
+        "applicant_id": 1,
+        "assignee_id": 3,
+        "priority": "urgent",
+        "archived": false,
+        "created_at": "2026-11-12T14:40:01.592Z",
+        "updated_at": "2026-11-12T14:40:01.767Z",
+        "cafe_name": "Центр",
+        "category_name": "Сантехника",
+        "status_name": "Закрыта",
+        "applicant_name": "Администратор",
+        "assignee_name": "Мастер 1"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/requests/18?confirm=true",
+      "expected": 204,
+      "actual": 204,
+      "body": null,
+      "response": null
+    }
+  ]
+}

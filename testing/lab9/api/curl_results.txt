@@ -1,0 +1,89 @@
+CoffeeDesk · real curl requests · http://127.0.0.1:41045
+01. GET /health → 200 (expected 200) PASS
+02. GET /requests → 401 (expected 401) PASS
+03. POST /auth/login → 200 (expected 200) PASS
+04. GET /requests → 200 (expected 200) PASS
+05. GET /requests/1 → 200 (expected 200) PASS
+06. GET /users → 200 (expected 200) PASS
+07. GET /statuses → 200 (expected 200) PASS
+08. GET /categories → 200 (expected 200) PASS
+09. GET /cafes → 200 (expected 200) PASS
+10. GET /requests?q=%D0%9A%D0%A0%D0%90%D0%9D&category_id=1 → 200 (expected 200) PASS
+11. POST /requests → 422 (expected 422) PASS
+12. POST /requests → 201 (expected 201) PASS
+13. PATCH /requests/20 → 200 (expected 200) PASS
+14. PATCH /requests/20/assignment → 422 (expected 422) PASS
+15. PATCH /requests/20/assignment → 200 (expected 200) PASS
+16. PATCH /requests/20/status → 409 (expected 409) PASS
+17. PATCH /requests/20/status → 200 (expected 200) PASS
+18. POST /requests/20/comments → 201 (expected 201) PASS
+19. GET /requests/20/history → 200 (expected 200) PASS
+20. PATCH /requests/20/status → 200 (expected 200) PASS
+21. PATCH /requests/20/status → 200 (expected 200) PASS
+22. DELETE /requests/20 → 400 (expected 400) PASS
+23. DELETE /requests/20?confirm=true → 204 (expected 204) PASS
+24. GET /requests?archived=true → 200 (expected 200) PASS
+25. GET /requests/99999999 → 404 (expected 404) PASS
+26. GET /requests/-1 → 422 (expected 422) PASS
+27. GET /requests?status_code=unknown → 422 (expected 422) PASS
+28. GET /openapi.json → 200 (expected 200) PASS
+29. POST /auth/logout → 204 (expected 204) PASS
+
+Examples (credentials and session values redacted):
+
+GET /requests/1
+{
+  "id": 1,
+  "number": "CB-00001",
+  "title": "Протекает кран у мойки",
+  "description": "Вода подтекает у основания крана рабочей мойки. Требуется заменить уплотнение.",
+  "cafe_id": 1,
+  "category_id": 1,
+  "status_code": "new",
+  "applicant_id": 5,
+  "assignee_id": null,
+  "priority": "high",
+  "archived": false,
+  "created_at": "2026-11-12T14:39:50.978Z",
+  "updated_at": "2026-11-12T14:39:50.978Z",
+  "cafe_name": "Центр",
+  "category_name": "Сантехника",
+  "status_name": "Новая",
+  "applicant_name": "Бариста 1",
+  "assignee_name": null
+}
+
+POST /requests
+{
+  "error": {
+    "code": "validation_error",
+    "message": "Проверьте обязательные поля, длину и допустимые значения.",
+    "details": [
+      {
+        "field": "body.title",
+        "type": "string_too_short"
+      },
+      {
+        "field": "body.description",
+        "type": "missing"
+      },
+      {
+        "field": "body.cafe_id",
+        "type": "missing"
+      },
+      {
+        "field": "body.category_id",
+        "type": "missing"
+      }
+    ]
+  }
+}
+
+GET /requests/99999999
+{
+  "error": {
+    "code": "not_found",
+    "message": "Заявка не найдена или недоступна.",
+    "details": []
+  }
+}

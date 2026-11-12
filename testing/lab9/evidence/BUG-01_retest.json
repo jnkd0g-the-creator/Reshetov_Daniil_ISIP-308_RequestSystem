@@ -1,5 +1,7 @@
 {
-  "version": "9763dbec5d34f6a365198d1e99c06c8f6cd6af1b",
+  "version": "a49f4f5ea19978467761c6beabf9e1fedc8b0d74",
+  "models_sha256": "e476e211123a3c75821129984a0fdb8ba04b74264169f9af2f2af051c9c6af6a",
+  "source_uncommitted": false,
   "request": {
     "title": "Проверка типа ID",
     "description": "JSON boolean не является целочисленным идентификатором бара.",
