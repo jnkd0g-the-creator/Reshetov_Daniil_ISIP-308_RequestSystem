@@ -1,0 +1,6 @@
+POST /requests with cafe_id=true
+Commit: a4ed69d04dccd82fcc4162b7d0e3f81cac409e70
+Expected HTTP 422; actual HTTP 201
+Database request count: 13; expected 12
+Result: FAIL
+No login credentials, CSRF or cookie values retained.
