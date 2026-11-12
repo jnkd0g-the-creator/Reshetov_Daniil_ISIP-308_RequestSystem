@@ -1,0 +1,12 @@
+erDiagram
+ Roles ||--o{ Users : has
+ Users ||--o{ Requests : creates
+ Users o|--o{ Requests : assigned
+ Cafes ||--o{ Requests : location
+ Categories ||--o{ Requests : classifies
+ Statuses ||--o{ Requests : state
+ Requests ||--o{ Comments : contains
+ Users ||--o{ Comments : writes
+ Requests ||--o{ RequestHistory : logs
+ Users ||--o{ RequestHistory : acts
+ Users ||--o{ Sessions : authenticates

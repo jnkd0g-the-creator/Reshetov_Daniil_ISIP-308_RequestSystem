@@ -1,0 +1,18 @@
+CoffeeDesk · SQL execution, Python sqlite3 3.46.1
+
+Roles: 4
+Users: 6
+Cafes: 3
+Categories: 5
+Statuses: 4
+Requests: 12
+Comments: 5
+RequestHistory: 12
+Sessions: 0
+
+Executed: INSERT=5 SELECT=6 UPDATE=2 DELETE=2
+WHERE SELECT >=3; JOIN SELECT >=2
+FK rejection: FOREIGN KEY constraint failed
+Integrity: ok; foreign_key_check: []
+Repeated schema/seed: PASS; exercise rollback: PASS
+Full SQL and results: docs/database/query_results.txt
