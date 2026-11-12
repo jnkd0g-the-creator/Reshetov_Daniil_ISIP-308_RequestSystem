@@ -1,5 +1,5 @@
 'use strict';
-const API = '/ui-api';
+const API = '';
 const root = document.querySelector('#root');
 const roles = {admin:'Администратор',operator:'Оператор',technician:'Исполнитель',applicant:'Заявитель'};
 const priorities = {low:'Низкий',normal:'Обычный',high:'Высокий',urgent:'Срочный'};

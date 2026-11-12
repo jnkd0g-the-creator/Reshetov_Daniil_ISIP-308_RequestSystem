@@ -8,6 +8,7 @@ from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Inches, Pt, RGBColor
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ["Анализ предметной области и требования", "Создание и ведение Git-репозитория", "Проектирование архитектуры", "Проектирование пользовательского интерфейса", "Проектирование и создание базы данных", "Разработка функционала системы", "Разработка REST API", "Контейнеризация и деплой", "Функциональное, интеграционное и API-тестирование", "Автоматизация, регрессия и итоговая приёмка"]
@@ -35,7 +36,9 @@ def markdown(doc, text):
                 path = ROOT / match[2]
                 if not path.is_file():
                     raise FileNotFoundError(path)
-                doc.add_picture(str(path), width=Inches(5.9))
+                with Image.open(path) as image:
+                    width = min(5.9, 7.0 * image.width / image.height)
+                doc.add_picture(str(path), width=Inches(width))
                 doc.add_paragraph(match[1], "Caption")
         elif line.startswith("|"):
             rows = [line]

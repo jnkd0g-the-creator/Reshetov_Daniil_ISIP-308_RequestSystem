@@ -63,6 +63,36 @@ class UserOut(BaseModel):
     active: bool
 
 
+class LoginOut(BaseModel):
+    user: UserOut
+    csrf_token: str
+
+
+class CategoryOut(BaseModel):
+    id: int
+    name: str
+
+
+class CafeOut(CategoryOut):
+    address: str
+
+
+class StatusOut(BaseModel):
+    code: str
+    name: str
+    sort_order: int
+
+
+class ErrorDetail(BaseModel):
+    code: str
+    message: str
+    details: list[dict]
+
+
+class ErrorOut(BaseModel):
+    error: ErrorDetail
+
+
 class RequestOut(BaseModel):
     id: int
     number: str
