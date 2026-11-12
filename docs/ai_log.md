@@ -184,3 +184,25 @@ Smoke-тесты 2 PASS после подключения маршрутов. **
 предотвращают принятие удобного, но незащищённого интерфейса.
 **Вклад студента:** самостоятельное повторение curl/Swagger ещё требуется.
 **Итог:** контракт подтверждён инструментами, ревью не считается тестом.
+
+## ЛР 8 — инфраструктура
+
+**Этап/контекст:** feature/lab8, Python 3.10, FastAPI, src/coffeedesk,
+SQL в docs/database, команда `python -m coffeedesk serve`, SQLite-том.
+**Запрос 1 (первая версия):**
+> Предложи Dockerfile и Compose для CoffeeDesk на Python 3.10-slim-bookworm. Runtime зависимости в requirements.txt, исходники src/coffeedesk, schema.sql/seed.sql в docs/database. Запуск python -m coffeedesk serve, PORT из env, SQLite /app/data/coffeedesk.db должна переживать пересоздание. Не копируй .venv, .env, .local, рабочие БД и отчёты. Сначала дай минимальный черновик, затем проверь безопасность.
+
+**Ответ 1:** минимальный рабочий build-copy-CMD; сохранён Dockerfile.before.
+Недостатки: root по умолчанию, не подготовлен writable каталог non-root,
+нет контейнерного healthcheck. **Запрос 2:**
+> Проведи ревью фактического Dockerfile CoffeeDesk и docker-compose.yml. Проверь USER, writable SQLite directory, размер образа, кэш requirements до src, отсутствие секретов, PORT и volume. Добавь безопасный non-root запуск и healthcheck через Python stdlib, проверяющий /health и БД. Не открывай публичный порт и не создавай облачные ресурсы без согласования. Покажи до/после и подтверди замечания реальной сборкой, init, HTTP и пересозданием с томом. Не выдавай локальный запуск за удалённый деплой.
+
+**Ответ/принято:** UID/GID 10001, install -d owner, health через urllib,
+cap_drop/no-new-privileges, localhost publish. **Отклонено:** curl в image ради
+health; публичный HTTP и выдуманный внешний адрес. **Проверка:** реальные
+docker build/run/inspect, 201 и сохранение при новом container ID в docker_run.txt;
+новое venv/HTTP — clean_start.txt. Внешний деплой BLOCKED, данных сервера нет.
+**Почему модель/промпт:** контекст файлов и команда запуска помогают найти
+права SQLite, которые общий Docker-шаблон не учитывает. **Вклад студента:**
+пользователь установил Docker; самостоятельно проверить/выбрать сервер ещё нужно.
+**Итог:** локальная упаковка подтверждена, удалённая часть не приукрашена.

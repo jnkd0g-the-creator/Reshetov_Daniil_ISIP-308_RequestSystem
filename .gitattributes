@@ -1,0 +1,8 @@
+# Preserve command evidence, including native Git/Docker terminal padding.
+docs/evidence/*.txt whitespace=-blank-at-eol
+docs/deployment/*.txt whitespace=-blank-at-eol
+testing/**/*.txt whitespace=-blank-at-eol
+*.docx binary
+*.sqlite3 binary
+*.png binary
+*.mp4 binary

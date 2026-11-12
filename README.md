@@ -76,7 +76,7 @@ ruff check src tests
 ## Ход выполнения
 
 План и соответствие методичке: [`docs/assignment_checklist.md`](docs/assignment_checklist.md).
-Деплой описывается на этапе ЛР8.
+Недоступные внешние действия отмечены явно, без выдуманных результатов.
 
 ## REST API
 
@@ -100,5 +100,25 @@ python scripts/check_api.py          # 29 реальных curl, локальн�
 Полный контракт, таблица endpoints, коллекция curl и реальные обезличенные
 ответы: [`docs/api/`](docs/api/). `GET /requests` возвращает JSON-массив;
 поиск `q=КРАН`, фильтры `status_code=new&category_id=1`, limit/offset.
+
+## Docker и повторный деплой
+
+```bash
+cp .env.example .env
+docker compose build
+docker compose run --rm coffee python -m coffeedesk init-db --demo --credentials /app/data/demo_credentials.txt
+docker compose up -d --wait
+curl http://127.0.0.1:8000/health
+```
+
+При занятом порте задайте `PORT=8001` в локальном `.env`.
+База сохраняется в именованном томе. `down -v` удаляет данные — не выполнять
+для обычного обновления. Контейнер работает от UID 10001, имеет healthcheck.
+Подробная инструкция с нуля, настройки, резервирование и шаги сервера:
+[`docs/deployment/README.md`](docs/deployment/README.md).
+
+**Фактически проверен локальный Docker на `http://127.0.0.1:8001`** (Compose
+project `coffeedesk-labs`). Удалённый деплой пока BLOCKED: сервер/адрес не задан.
+Не выдаём localhost за внешний стенд. Для production нужны TLS и Secure-cookie.
 
 Репозиторий: https://github.com/jnkd0g-the-creator/Reshetov_Daniil_ISIP-308_RequestSystem
