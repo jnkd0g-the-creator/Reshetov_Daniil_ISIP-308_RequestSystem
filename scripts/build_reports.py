@@ -1,5 +1,6 @@
 """Build actual DOCX reports from versioned Markdown, preserving tables/images."""
 
+import argparse
 import re
 from pathlib import Path
 
@@ -107,5 +108,10 @@ def build(number, source):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("numbers", nargs="*", type=int)
+    args = parser.parse_args()
     for source in sorted((ROOT / "docs/reports_src").glob("lab*.md")):
-        build(int(source.stem[3:]), source)
+        number = int(source.stem[3:])
+        if not args.numbers or number in args.numbers:
+            build(number, source)
