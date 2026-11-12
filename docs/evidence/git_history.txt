@@ -1,0 +1,22 @@
+$ git log --graph --oneline --all -12
+*   354cb34 merge: integrate laboratory 2 Git workflow
+|\
+| * 483e159 docs: document develop workflow and verified conflict resolution
+|/
+* eaefc1b docs: add laboratory 1 DOCX report and report generator
+* 617fc01 docs: add reproducible UML use case diagram
+* bedae3e docs: define coffee-bar requirements roles and acceptance criteria
+* e069217 chore: initialize CoffeeDesk project and laboratory checklist
+* 02474f1 Initial commit
+
+
+$ git branch -avv
+* develop                354cb34 [origin/develop: ahead 1] merge: integrate laboratory 2 Git workflow
+  main                   354cb34 [origin/main] merge: integrate laboratory 2 Git workflow
+  remotes/origin/develop 483e159 docs: document develop workflow and verified conflict resolution
+  remotes/origin/main    354cb34 merge: integrate laboratory 2 Git workflow
+
+
+$ git remote -v
+origin	git@github.com:jnkd0g-the-creator/Reshetov_Daniil_ISIP-308_RequestSystem.git (fetch)
+origin	git@github.com:jnkd0g-the-creator/Reshetov_Daniil_ISIP-308_RequestSystem.git (push)

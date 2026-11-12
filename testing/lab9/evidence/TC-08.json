@@ -1,0 +1,47 @@
+{
+  "id": "TC-08",
+  "expected": "Понятная ошибка и 404",
+  "actual": "UI показал понятную ошибку, HTTP 404.",
+  "status": "PASS",
+  "execution_mode": "browser + SQLite",
+  "related_http": [
+    {
+      "method": "POST",
+      "path": "/requests",
+      "expected": 422,
+      "actual": 422,
+      "body": {
+        "title": "Проверка API",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": true,
+        "category_id": 1
+      },
+      "response": {
+        "error": {
+          "code": "validation_error",
+          "message": "Проверьте обязательные поля, длину и допустимые значения.",
+          "details": [
+            {
+              "field": "body.cafe_id",
+              "type": "int_type"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/requests/99999999",
+      "expected": 404,
+      "actual": 404,
+      "body": null,
+      "response": {
+        "error": {
+          "code": "not_found",
+          "message": "Заявка не найдена или недоступна.",
+          "details": []
+        }
+      }
+    }
+  ]
+}

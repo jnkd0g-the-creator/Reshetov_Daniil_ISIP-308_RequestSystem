@@ -1,0 +1,308 @@
+sqlite> BEGIN;
+rowcount=-1
+
+sqlite> INSERT INTO Cafes(id,name,address) VALUES(100,'Учебный бар SQL','Тестовая локация');
+rowcount=1
+
+sqlite> INSERT INTO Categories(id,name) VALUES(100,'Тестовая категория SQL');
+rowcount=1
+
+sqlite> INSERT INTO Users(id,username,name,role_code) VALUES(100,'sql_demo','SQL-пользователь','applicant');
+rowcount=1
+
+sqlite> INSERT INTO Requests(id,title,description,cafe_id,category_id,applicant_id) VALUES(100,'Проверка SQL','Проверка создания заявки запросом SQL.',100,100,100);
+rowcount=1
+
+sqlite> INSERT INTO Comments(id,request_id,author_id,body) VALUES(100,100,100,'Учебный комментарий SQL.');
+rowcount=1
+
+sqlite> SELECT id,title,status_code FROM Requests WHERE status_code='new' ORDER BY id;
+[
+  {
+    "id": 1,
+    "title": "Протекает кран у мойки",
+    "status_code": "new"
+  },
+  {
+    "id": 2,
+    "title": "Кофемашина не набирает давление",
+    "status_code": "new"
+  },
+  {
+    "id": 5,
+    "title": "Прочистить слив у мойки",
+    "status_code": "new"
+  },
+  {
+    "id": 7,
+    "title": "Заменить лампу в подсобке",
+    "status_code": "new"
+  },
+  {
+    "id": 9,
+    "title": "Заказать хозяйственное обслуживание",
+    "status_code": "new"
+  },
+  {
+    "id": 100,
+    "title": "Проверка SQL",
+    "status_code": "new"
+  }
+]
+
+sqlite> SELECT id,title,priority FROM Requests WHERE priority='urgent' ORDER BY id;
+[
+  {
+    "id": 2,
+    "title": "Кофемашина не набирает давление",
+    "priority": "urgent"
+  },
+  {
+    "id": 10,
+    "title": "Проверить розетку у холодильника",
+    "priority": "urgent"
+  }
+]
+
+sqlite> SELECT id,title FROM Requests WHERE title LIKE '%кран%' ORDER BY id;
+[
+  {
+    "id": 1,
+    "title": "Протекает кран у мойки"
+  }
+]
+
+sqlite> SELECT r.id,r.title,c.name AS cafe,cat.name AS category,s.name AS status
+ FROM Requests r JOIN Cafes c ON c.id=r.cafe_id
+ JOIN Categories cat ON cat.id=r.category_id JOIN Statuses s ON s.code=r.status_code
+ WHERE r.archived=0 ORDER BY r.id;
+[
+  {
+    "id": 1,
+    "title": "Протекает кран у мойки",
+    "cafe": "Центр",
+    "category": "Сантехника",
+    "status": "Новая"
+  },
+  {
+    "id": 2,
+    "title": "Кофемашина не набирает давление",
+    "cafe": "Парк",
+    "category": "Кофейное оборудование",
+    "status": "Новая"
+  },
+  {
+    "id": 3,
+    "title": "Не горит свет над стойкой",
+    "cafe": "Вокзал",
+    "category": "Электрика",
+    "status": "В работе"
+  },
+  {
+    "id": 4,
+    "title": "Закрепить ножку стула",
+    "cafe": "Центр",
+    "category": "Мебель",
+    "status": "Выполнена"
+  },
+  {
+    "id": 5,
+    "title": "Прочистить слив у мойки",
+    "cafe": "Парк",
+    "category": "Сантехника",
+    "status": "Новая"
+  },
+  {
+    "id": 6,
+    "title": "Обслужить кофемолку",
+    "cafe": "Центр",
+    "category": "Кофейное оборудование",
+    "status": "В работе"
+  },
+  {
+    "id": 7,
+    "title": "Заменить лампу в подсобке",
+    "cafe": "Вокзал",
+    "category": "Электрика",
+    "status": "Новая"
+  },
+  {
+    "id": 8,
+    "title": "Починить дверцу шкафа",
+    "cafe": "Парк",
+    "category": "Мебель",
+    "status": "Выполнена"
+  },
+  {
+    "id": 9,
+    "title": "Заказать хозяйственное обслуживание",
+    "cafe": "Центр",
+    "category": "Хозяйственные работы",
+    "status": "Новая"
+  },
+  {
+    "id": 10,
+    "title": "Проверить розетку у холодильника",
+    "cafe": "Вокзал",
+    "category": "Электрика",
+    "status": "В работе"
+  },
+  {
+    "id": 11,
+    "title": "Устранить течь сифона",
+    "cafe": "Парк",
+    "category": "Сантехника",
+    "status": "В работе"
+  },
+  {
+    "id": 12,
+    "title": "Заменить уплотнение холодильника",
+    "cafe": "Центр",
+    "category": "Хозяйственные работы",
+    "status": "Закрыта"
+  },
+  {
+    "id": 100,
+    "title": "Проверка SQL",
+    "cafe": "Учебный бар SQL",
+    "category": "Тестовая категория SQL",
+    "status": "Новая"
+  }
+]
+
+sqlite> SELECT r.id,r.title,u.name AS applicant,assignee.name AS assignee
+ FROM Requests r JOIN Users u ON u.id=r.applicant_id
+ LEFT JOIN Users assignee ON assignee.id=r.assignee_id ORDER BY r.id;
+[
+  {
+    "id": 1,
+    "title": "Протекает кран у мойки",
+    "applicant": "Бариста 1",
+    "assignee": null
+  },
+  {
+    "id": 2,
+    "title": "Кофемашина не набирает давление",
+    "applicant": "Бариста 2",
+    "assignee": null
+  },
+  {
+    "id": 3,
+    "title": "Не горит свет над стойкой",
+    "applicant": "Бариста 1",
+    "assignee": "Мастер 2"
+  },
+  {
+    "id": 4,
+    "title": "Закрепить ножку стула",
+    "applicant": "Бариста 2",
+    "assignee": "Мастер 1"
+  },
+  {
+    "id": 5,
+    "title": "Прочистить слив у мойки",
+    "applicant": "Бариста 1",
+    "assignee": null
+  },
+  {
+    "id": 6,
+    "title": "Обслужить кофемолку",
+    "applicant": "Бариста 1",
+    "assignee": "Мастер 1"
+  },
+  {
+    "id": 7,
+    "title": "Заменить лампу в подсобке",
+    "applicant": "Бариста 2",
+    "assignee": null
+  },
+  {
+    "id": 8,
+    "title": "Починить дверцу шкафа",
+    "applicant": "Бариста 2",
+    "assignee": "Мастер 1"
+  },
+  {
+    "id": 9,
+    "title": "Заказать хозяйственное обслуживание",
+    "applicant": "Бариста 1",
+    "assignee": null
+  },
+  {
+    "id": 10,
+    "title": "Проверить розетку у холодильника",
+    "applicant": "Бариста 2",
+    "assignee": "Мастер 2"
+  },
+  {
+    "id": 11,
+    "title": "Устранить течь сифона",
+    "applicant": "Бариста 1",
+    "assignee": "Мастер 1"
+  },
+  {
+    "id": 12,
+    "title": "Заменить уплотнение холодильника",
+    "applicant": "Бариста 2",
+    "assignee": "Мастер 1"
+  },
+  {
+    "id": 100,
+    "title": "Проверка SQL",
+    "applicant": "SQL-пользователь",
+    "assignee": null
+  }
+]
+
+sqlite> SELECT c.name,COUNT(r.id) AS request_count FROM Categories c
+ LEFT JOIN Requests r ON r.category_id=c.id GROUP BY c.id ORDER BY c.id;
+[
+  {
+    "name": "Сантехника",
+    "request_count": 3
+  },
+  {
+    "name": "Кофейное оборудование",
+    "request_count": 2
+  },
+  {
+    "name": "Электрика",
+    "request_count": 3
+  },
+  {
+    "name": "Мебель",
+    "request_count": 2
+  },
+  {
+    "name": "Хозяйственные работы",
+    "request_count": 2
+  },
+  {
+    "name": "Тестовая категория SQL",
+    "request_count": 1
+  }
+]
+
+sqlite> UPDATE Requests SET priority='high' WHERE id=100;
+rowcount=1
+
+sqlite> UPDATE Requests SET description='Уточнённое описание тестовой заявки SQL.' WHERE id=100;
+rowcount=1
+
+sqlite> DELETE FROM Comments WHERE id=100;
+rowcount=1
+
+sqlite> DELETE FROM Requests WHERE id=100;
+rowcount=1
+
+sqlite> ROLLBACK;
+rowcount=-1
+
+Negative FK test: FOREIGN KEY constraint failed
+
+
+Final counts (exercise rolled back): {"Roles": 4, "Users": 6, "Cafes": 3, "Categories": 5, "Statuses": 4, "Requests": 12, "Comments": 5, "RequestHistory": 12, "Sessions": 0}
+
+PRAGMA foreign_key_check: []
+PRAGMA integrity_check: ok
+All password_hash values: !unset (no usable passwords). Sessions: 0.

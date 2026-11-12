@@ -1,0 +1,5 @@
+FROM python:3.10-slim-bookworm
+RUN apt-get update && apt-get install -y --no-install-recommends libreoffice-writer fonts-dejavu-core \
+    && rm -rf /var/lib/apt/lists/*
+ENV HOME=/tmp
+CMD ["sh", "-c", "libreoffice -env:UserInstallation=file:///tmp/lo-profile --headless --convert-to pdf --outdir /out /in/*.docx"]

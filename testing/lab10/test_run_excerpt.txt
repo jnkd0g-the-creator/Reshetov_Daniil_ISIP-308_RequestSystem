@@ -1,0 +1,25 @@
+Фрагмент фактического полного журнала; оригинал: testing/lab10/test_run.txt
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/jnk/work_projects/Reshetov_Daniil_ISIP-308_RequestSystem/testing/lab10/junit.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.10.11-final-0 _______________
+
+Name                           Stmts   Miss  Cover   Missing
+------------------------------------------------------------
+src/coffeedesk/__init__.py         1      0   100%
+src/coffeedesk/__main__.py        41     41     0%   1-51
+src/coffeedesk/api.py             71      4    94%   44, 88, 93, 109
+src/coffeedesk/app.py             58      2    97%   52, 67
+src/coffeedesk/config.py          25      3    88%   20, 23, 29
+src/coffeedesk/database.py        40      1    98%   40
+src/coffeedesk/errors.py          10      0   100%
+src/coffeedesk/models.py          97      0   100%
+src/coffeedesk/repository.py      81      0   100%
+src/coffeedesk/security.py        19      1    95%   18
+src/coffeedesk/services.py       191      9    95%   37, 48, 51, 89, 94, 113, 184, 186, 213
+------------------------------------------------------------
+TOTAL                            634     61    90%
+Coverage XML written to file testing/lab10/coverage.xml
+Coverage JSON written to file testing/lab10/coverage.json
+======================== 57 passed, 1 warning in 23.98s ========================

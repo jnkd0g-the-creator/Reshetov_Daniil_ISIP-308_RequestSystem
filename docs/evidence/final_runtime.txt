@@ -1,0 +1,5 @@
+CoffeeDesk · final runtime verification, 2026-11-12
+Application source SHA256 matches the full 57-test run: PASS
+127.0.0.1:8000: /health=200, login=200, BUG-01 cafe_id=true -> 422, logout=204; PASS
+127.0.0.1:8001: /health=200, login=200, BUG-01 cafe_id=true -> 422, logout=204; PASS
+No credentials, cookies or CSRF values retained. Remote address is still not provided.

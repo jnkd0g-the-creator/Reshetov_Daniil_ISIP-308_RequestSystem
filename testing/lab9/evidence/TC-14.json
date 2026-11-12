@@ -1,0 +1,211 @@
+{
+  "id": "TC-14",
+  "expected": "Кнопка скрыта, POST 403",
+  "actual": "Кнопки создания нет; прямой POST тоже запрещён 403.",
+  "status": "PASS",
+  "execution_mode": "browser + SQLite",
+  "related_http": [
+    {
+      "method": "POST",
+      "path": "/requests",
+      "expected": 422,
+      "actual": 422,
+      "body": {
+        "title": "Проверка API",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": true,
+        "category_id": 1
+      },
+      "response": {
+        "error": {
+          "code": "validation_error",
+          "message": "Проверьте обязательные поля, длину и допустимые значения.",
+          "details": [
+            {
+              "field": "body.cafe_id",
+              "type": "int_type"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/requests/99999999",
+      "expected": 404,
+      "actual": 404,
+      "body": null,
+      "response": {
+        "error": {
+          "code": "not_found",
+          "message": "Заявка не найдена или недоступна.",
+          "details": []
+        }
+      }
+    },
+    {
+      "method": "PATCH",
+      "path": "/requests/13/status",
+      "expected": 409,
+      "actual": 409,
+      "body": {
+        "status_code": "closed"
+      },
+      "response": {
+        "error": {
+          "code": "state_conflict",
+          "message": "Допустим только следующий статус: Новая → В работе → Выполнена → Закрыта.",
+          "details": []
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/requests",
+      "expected": 200,
+      "actual": 200,
+      "body": null,
+      "response": [
+        {
+          "id": 11,
+          "number": "CB-00011",
+          "title": "Устранить течь сифона",
+          "description": "Под мойкой обнаружена небольшая течь в соединении сифона, поставлена ёмкость.",
+          "cafe_id": 2,
+          "category_id": 1,
+          "status_code": "in_progress",
+          "applicant_id": 5,
+          "assignee_id": 3,
+          "priority": "high",
+          "archived": false,
+          "created_at": "2026-11-12T14:45:42.658Z",
+          "updated_at": "2026-11-12T14:45:42.658Z",
+          "cafe_name": "Парк",
+          "category_name": "Сантехника",
+          "status_name": "В работе",
+          "applicant_name": "Бариста 1",
+          "assignee_name": "Мастер 1"
+        },
+        {
+          "id": 9,
+          "number": "CB-00009",
+          "title": "Заказать хозяйственное обслуживание",
+          "description": "Нужна плановая уборка технической зоны после перемещения оборудования.",
+          "cafe_id": 1,
+          "category_id": 5,
+          "status_code": "new",
+          "applicant_id": 5,
+          "assignee_id": null,
+          "priority": "low",
+          "archived": false,
+          "created_at": "2026-11-12T14:45:42.658Z",
+          "updated_at": "2026-11-12T14:45:42.658Z",
+          "cafe_name": "Центр",
+          "category_name": "Хозяйственные работы",
+          "status_name": "Новая",
+          "applicant_name": "Бариста 1",
+          "assignee_name": null
+        },
+        {
+          "id": 6,
+          "number": "CB-00006",
+          "title": "Обслужить кофемолку",
+          "description": "Нестабильный помол, нужно проверить жернова и выполнить настройку.",
+          "cafe_id": 1,
+          "category_id": 2,
+          "status_code": "in_progress",
+          "applicant_id": 5,
+          "assignee_id": 3,
+          "priority": "normal",
+          "archived": false,
+          "created_at": "2026-11-12T14:45:42.658Z",
+          "updated_at": "2026-11-12T14:45:42.658Z",
+          "cafe_name": "Центр",
+          "category_name": "Кофейное оборудование",
+          "status_name": "В работе",
+          "applicant_name": "Бариста 1",
+          "assignee_name": "Мастер 1"
+        },
+        {
+          "id": 5,
+          "number": "CB-00005",
+          "title": "Прочистить слив у мойки",
+          "description": "Вода медленно уходит из мойки, периодически появляется неприятный запах.",
+          "cafe_id": 2,
+          "category_id": 1,
+          "status_code": "new",
+          "applicant_id": 5,
+          "assignee_id": null,
+          "priority": "high",
+          "archived": false,
+          "created_at": "2026-11-12T14:45:42.658Z",
+          "updated_at": "2026-11-12T14:45:42.658Z",
+          "cafe_name": "Парк",
+          "category_name": "Сантехника",
+          "status_name": "Новая",
+          "applicant_name": "Бариста 1",
+          "assignee_name": null
+        },
+        {
+          "id": 3,
+          "number": "CB-00003",
+          "title": "Не горит свет над стойкой",
+          "description": "Перестал работать светильник над барной стойкой, необходимо проверить питание.",
+          "cafe_id": 3,
+          "category_id": 3,
+          "status_code": "in_progress",
+          "applicant_id": 5,
+          "assignee_id": 4,
+          "priority": "normal",
+          "archived": false,
+          "created_at": "2026-11-12T14:45:42.658Z",
+          "updated_at": "2026-11-12T14:45:42.658Z",
+          "cafe_name": "Вокзал",
+          "category_name": "Электрика",
+          "status_name": "В работе",
+          "applicant_name": "Бариста 1",
+          "assignee_name": "Мастер 2"
+        },
+        {
+          "id": 1,
+          "number": "CB-00001",
+          "title": "Протекает кран у мойки",
+          "description": "Вода подтекает у основания крана рабочей мойки. Требуется заменить уплотнение.",
+          "cafe_id": 1,
+          "category_id": 1,
+          "status_code": "new",
+          "applicant_id": 5,
+          "assignee_id": null,
+          "priority": "high",
+          "archived": false,
+          "created_at": "2026-11-12T14:45:42.658Z",
+          "updated_at": "2026-11-12T14:45:42.658Z",
+          "cafe_name": "Центр",
+          "category_name": "Сантехника",
+          "status_name": "Новая",
+          "applicant_name": "Бариста 1",
+          "assignee_name": null
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/requests",
+      "expected": 403,
+      "actual": 403,
+      "body": {
+        "title": "Проверка API",
+        "description": "Подробное учебное описание для проверки HTTP и SQLite.",
+        "cafe_id": 1,
+        "category_id": 1
+      },
+      "response": {
+        "error": {
+          "code": "forbidden",
+          "message": "Недостаточно прав для этого действия.",
+          "details": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+flowchart TB
+ UI[Web UI / API client] --> C[FastAPI controllers]
+ C --> S[RequestService / AuthService]
+ S --> R[Repository / unit of work]
+ R --> D[(SQLite)]
+ subgraph Domain modules
+ U[Users / Roles / Sessions]
+ Q[Requests / Statuses / Categories / Cafes]
+ H[Comments / History]
+ end
+ S -.-> U
+ S -.-> Q
+ S -.-> H

@@ -1,0 +1,8 @@
+{
+  "id": "TC-05",
+  "expected": "Мастер и В работе сохранены",
+  "actual": "Мастер 1 назначен, статус В работе.",
+  "status": "PASS",
+  "execution_mode": "browser + SQLite",
+  "related_http": []
+}

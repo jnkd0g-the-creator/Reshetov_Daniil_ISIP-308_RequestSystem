@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-12",
+  "local_container_url": "http://127.0.0.1:8001",
+  "local_environment": "current workstation, Ubuntu 26.04, Docker Engine 29.9.3",
+  "remote_url": null,
+  "remote_status": "BLOCKED",
+  "reason": "No agreed remote server, configured SSH host alias or external URL supplied. Localhost is not evidence of remote deployment.",
+  "evidence": ["docker_run.txt", "clean_start.txt", "container.png"]
+}

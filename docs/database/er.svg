@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1320" viewBox="0 0 1800 1320">
+<rect width="100%" height="100%" fill="#f7f5f0"/>
+<text x="50" y="67" font-family="DejaVu Sans,sans-serif" font-size="32" fill="#183e35">CoffeeDesk · ER-модель · PK/FK и связи 1:M</text>
+<polyline points="535,205 650,205" fill="none" stroke="#29634d" stroke-width="4"/>
+<text x="592" y="195" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#213c35">1:M</text>
+<polyline points="1130,205 1240,205" fill="none" stroke="#29634d" stroke-width="4"/>
+<text x="1185" y="195" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#213c35">1:M</text>
+<polyline points="535,575 650,575" fill="none" stroke="#29634d" stroke-width="4"/>
+<text x="592" y="565" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#213c35">1:M</text>
+<polyline points="1240,575 1130,575" fill="none" stroke="#29634d" stroke-width="4"/>
+<text x="1185" y="565" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#213c35">1:M</text>
+<polyline points="890,365 890,465" fill="none" stroke="#29634d" stroke-width="4"/>
+<text x="890" y="405" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#213c35">1:M ×2</text>
+<polyline points="805,765 590,930" fill="none" stroke="#29634d" stroke-width="4"/>
+<text x="697" y="837" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#213c35">1:M</text>
+<polyline points="1000,765 1270,930" fill="none" stroke="#29634d" stroke-width="4"/>
+<text x="1135" y="837" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#213c35">1:M</text>
+<rect x="55" y="125" width="480" height="240" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="77" y="167" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Roles</text>
+<text x="77" y="205" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">PK code</text>
+<text x="77" y="232" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">name UNIQUE</text>
+<rect x="650" y="125" width="480" height="240" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="672" y="167" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Users</text>
+<text x="672" y="205" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">PK id, username UNIQUE</text>
+<text x="672" y="232" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">FK role_code → Roles</text>
+<text x="672" y="259" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">password_hash, active, name</text>
+<rect x="1240" y="125" width="480" height="240" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="1262" y="167" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Sessions</text>
+<text x="1262" y="205" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">PK token_hash, csrf_hash</text>
+<text x="1262" y="232" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">FK user_id → Users</text>
+<text x="1262" y="259" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">expires_at</text>
+<rect x="55" y="465" width="480" height="300" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="77" y="507" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Cafes</text>
+<text x="77" y="545" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">PK id</text>
+<text x="77" y="572" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">name UNIQUE</text>
+<text x="77" y="599" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">address</text>
+<rect x="650" y="465" width="480" height="300" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="672" y="507" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Requests</text>
+<text x="672" y="545" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">PK id, title, description</text>
+<text x="672" y="572" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">FK cafe/category/status</text>
+<text x="672" y="599" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">FK applicant/assignee → Users</text>
+<text x="672" y="626" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">priority, archived, dates</text>
+<rect x="1240" y="465" width="480" height="300" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="1262" y="507" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Categories / Statuses</text>
+<text x="1262" y="545" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">PK Categories.id, name UNIQUE</text>
+<text x="1262" y="572" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">PK Statuses.code, name UNIQUE</text>
+<text x="1262" y="599" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">Два отдельных справочника</text>
+<rect x="350" y="930" width="480" height="240" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="372" y="972" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Comments</text>
+<text x="372" y="1010" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">PK id, body, created_at</text>
+<text x="372" y="1037" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">FK request_id → Requests</text>
+<text x="372" y="1064" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">FK author_id → Users</text>
+<rect x="1030" y="930" width="480" height="240" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="1052" y="972" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">RequestHistory</text>
+<text x="1052" y="1010" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">PK id, event, old/new, date</text>
+<text x="1052" y="1037" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">FK request_id → Requests</text>
+<text x="1052" y="1064" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">FK actor_id → Users</text>
+<text x="55" y="1251" font-family="DejaVu Sans,sans-serif" font-size="21" fill="#213c35">Также Users 1:M Comments/RequestHistory. NOT NULL, FK RESTRICT; sessions удаляются с пользователем.</text>
+</svg>

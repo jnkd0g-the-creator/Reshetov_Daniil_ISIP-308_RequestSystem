@@ -1,0 +1,20 @@
+services:
+  coffee:
+    build: .
+    image: coffeedesk:local
+    environment:
+      COFFEE_MODE: ${COFFEE_MODE:-development}
+      COFFEE_DB_PATH: /app/data/coffeedesk.db
+      COFFEE_SECURE_COOKIES: ${COFFEE_SECURE_COOKIES:-false}
+      PORT: ${PORT:-8000}
+    ports:
+      - "${COFFEE_BIND:-127.0.0.1}:${PORT:-8000}:${PORT:-8000}"
+    volumes:
+      - coffee_data:/app/data
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+volumes:
+  coffee_data:

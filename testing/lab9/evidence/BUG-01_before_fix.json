@@ -1,0 +1,33 @@
+{
+  "version": "a4ed69d04dccd82fcc4162b7d0e3f81cac409e70",
+  "request": {
+    "title": "Проверка типа ID",
+    "description": "JSON boolean не является целочисленным идентификатором бара.",
+    "cafe_id": true,
+    "category_id": 1
+  },
+  "expected_http": 422,
+  "actual_http": 201,
+  "response": {
+    "id": 13,
+    "number": "CB-00013",
+    "title": "Проверка типа ID",
+    "description": "JSON boolean не является целочисленным идентификатором бара.",
+    "cafe_id": 1,
+    "category_id": 1,
+    "status_code": "new",
+    "applicant_id": 1,
+    "assignee_id": null,
+    "priority": "normal",
+    "archived": false,
+    "created_at": "2026-11-12T14:34:40.033Z",
+    "updated_at": "2026-11-12T14:34:40.033Z",
+    "cafe_name": "Центр",
+    "category_name": "Сантехника",
+    "status_name": "Новая",
+    "applicant_name": "Администратор",
+    "assignee_name": null
+  },
+  "database_count": 13,
+  "result": "FAIL"
+}

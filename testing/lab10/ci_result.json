@@ -1,0 +1,12 @@
+{
+  "id": 43241329828,
+  "name": "CoffeeDesk regression",
+  "head_branch": "develop",
+  "head_sha": "f62853cc612e895da8305fdcc194d47a7aeb2140",
+  "status": "completed",
+  "conclusion": "success",
+  "html_url": "https://github.com/jnkd0g-the-creator/Reshetov_Daniil_ISIP-308_RequestSystem/actions/runs/43241329828",
+  "created_at": "2026-11-12T14:50:13Z",
+  "updated_at": "2026-11-12T14:50:59Z",
+  "checked_at": "2026-11-12"
+}

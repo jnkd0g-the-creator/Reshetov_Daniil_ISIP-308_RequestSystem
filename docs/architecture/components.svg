@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000">
+<rect width="100%" height="100%" fill="#f7f5f0"/>
+<text x="50" y="67" font-family="DejaVu Sans,sans-serif" font-size="32" fill="#183e35">CoffeeDesk · диаграмма компонентов</text>
+<rect x="55" y="160" width="360" height="200" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="77" y="202" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Web UI</text>
+<text x="77" y="240" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">Вход, список, формы</text>
+<text x="77" y="267" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">Карточка, архив</text>
+<text x="77" y="294" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">fetch + CSRF</text>
+<rect x="55" y="500" width="360" height="150" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="77" y="542" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">API client / Swagger</text>
+<text x="77" y="580" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">JSON over HTTP</text>
+<text x="77" y="607" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">OpenAPI contract</text>
+<rect x="535" y="260" width="400" height="200" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="557" y="302" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">FastAPI controllers</text>
+<text x="557" y="340" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">auth, requests, catalogs</text>
+<text x="557" y="367" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">HTTP → service</text>
+<text x="557" y="394" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">единый формат ошибок</text>
+<rect x="535" y="565" width="400" height="200" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="557" y="607" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Services</text>
+<text x="557" y="645" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">RequestService, AuthService</text>
+<text x="557" y="672" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">Роли, статусы, назначение</text>
+<text x="557" y="699" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">Комментарии и аудит</text>
+<rect x="1060" y="565" width="380" height="200" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="1082" y="607" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">Repository</text>
+<text x="1082" y="645" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">users, requests, catalogs</text>
+<text x="1082" y="672" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">comments, history, sessions</text>
+<text x="1082" y="699" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">параметризованный SQL</text>
+<rect x="1060" y="130" width="380" height="230" rx="16" fill="#ffffff" stroke="#557d6e" stroke-width="2"/>
+<text x="1082" y="172" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#213c35">SQLite</text>
+<text x="1082" y="210" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">9 таблиц</text>
+<text x="1082" y="237" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">FK + ограничения</text>
+<text x="1082" y="264" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">schema.sql / seed.sql</text>
+<text x="1082" y="291" font-family="DejaVu Sans,sans-serif" font-size="18" fill="#496459">Сохраняемый том Docker</text>
+<polyline points="415,260 535,330" fill="none" stroke="#29634d" stroke-width="5"/>
+<polyline points="415,575 475,575 475,390 535,390" fill="none" stroke="#29634d" stroke-width="5"/>
+<polyline points="730,460 730,565" fill="none" stroke="#29634d" stroke-width="5"/>
+<polyline points="935,660 1060,660" fill="none" stroke="#29634d" stroke-width="5"/>
+<polyline points="1250,565 1250,360" fill="none" stroke="#29634d" stroke-width="5"/>
+<text x="60" y="907" font-family="DejaVu Sans,sans-serif" font-size="22" fill="#213c35">Модули предметной области: пользователи · заявки · статусы · категории · бары · комментарии · история.</text>
+</svg>

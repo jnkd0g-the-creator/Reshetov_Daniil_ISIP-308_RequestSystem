@@ -1,0 +1,8 @@
+{
+  "id": "TC-04",
+  "expected": "Новое описание сохранено",
+  "actual": "Изменение видно в карточке и SQLite.",
+  "status": "PASS",
+  "execution_mode": "browser + SQLite",
+  "related_http": []
+}

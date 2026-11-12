@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-12",
+  "version": "f62853cc612e895da8305fdcc194d47a7aeb2140",
+  "source_sha256": "113d89fb823e2c529882bf66604119dadb8d54701d6a1e4e9ec1dc663e4b8751",
+  "source_uncommitted": false,
+  "address": "http://127.0.0.1:39155",
+  "python": "3.10.11 (main, Nov  8 2026, 07:11:43) [GCC 15.2.0]",
+  "os": "Ubuntu 26.04",
+  "browser": "Chromium 140 / Playwright 1.55.0",
+  "data": "temporary SQLite, 12 seeded requests, 6 users; removed after run"
+}
